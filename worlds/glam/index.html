@@ -12,24 +12,7 @@ a{display:inline-block;padding:10px 14px;border-radius:14px;text-decoration:none
 <body>
 <div class="top">
   <strong>👗 Glam Quest</strong>
-  <a class="hub" href="../../index.html">← Adventure Hub</a>
+  <a class="hub" href="/index.html">← Adventure Hub</a>
 </div>
-<iframe id="game" class="game" src="glam-quest-academy-v2.html" title="Glam Quest"></iframe>
-<script>
-// Bridge Prize Center values into the legacy Glam Quest localStorage if available.
-try{
-  const bridge=JSON.parse(localStorage.getItem('glamQuestPrizeBridge_v04')||'null');
-  if(bridge){
-    const raw=localStorage.getItem('glamQuestV2');
-    if(raw){
-      const s=JSON.parse(raw);
-      if(Array.isArray(bridge.sections) && bridge.sections.length===15){
-        s.prizes=[bridge.sections.slice(0,3),bridge.sections.slice(3,6),bridge.sections.slice(6,9),bridge.sections.slice(9,12),bridge.sections.slice(12,15)];
-      }
-      if(bridge.grand) s.grandPrize=bridge.grand;
-      localStorage.setItem('glamQuestV2',JSON.stringify(s));
-    }
-  }
-}catch(e){}
-</script>
+<iframe class="game" src="/worlds/glam/glam-quest-academy-v2.html" title="Glam Quest"></iframe>
 </body></html>

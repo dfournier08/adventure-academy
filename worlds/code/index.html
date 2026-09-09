@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Code Quest</title><link rel="stylesheet" href="style.css"></head>
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Code Quest</title>
+<link rel="stylesheet" href="/worlds/code/style.css">
+</head>
 <body><div class="wrap">
 <header class="top">
   <div><div class="tiny">ADVENTURE ACADEMY</div><h1>💻 Code Quest</h1></div>
   <div class="toolbar">
     <button class="btn secondary" onclick="speakPage()">🔊 Read Page</button>
-    <button class="btn secondary" onclick="location.href='../../index.html'">← Adventure Hub</button>
+    <button class="btn secondary" onclick="location.href='/index.html'">← Adventure Hub</button>
   </div>
 </header>
 <div class="stats"><div class="pill">⭐ <span id="points">0</span> pts</div><div class="pill">🏅 <span id="sectionsDone">0</span>/5 sections</div><div class="pill">💡 Hints: <span id="hintsStat">0</span></div><div class="pill">🧩 Solves: <span id="solvesStat">0</span></div></div>
@@ -47,9 +51,9 @@
 </section>
 
 <section id="worldComplete" class="screen">
-<div class="ticket"><h1>🏆 Code Explorer Badge Earned!</h1><p>You completed all 5 Code Quest sections.</p><p><strong>Total Code Quest Points:</strong> <span id="worldPoints"></span></p><p><strong>World Prize:</strong> <span id="worldPrize"></span></p><div class="toolbar noPrint"><button class="btn" onclick="window.print()">Print Prize Ticket</button><button class="btn secondary" onclick="location.href='../../index.html'">Adventure Hub</button></div></div>
+<div class="ticket"><h1>🏆 Code Explorer Badge Earned!</h1><p>You completed all 5 Code Quest sections.</p><p><strong>Total Code Quest Points:</strong> <span id="worldPoints"></span></p><p><strong>World Prize:</strong> <span id="worldPrize"></span></p><div class="toolbar noPrint"><button class="btn" onclick="window.print()">Print Prize Ticket</button><button class="btn secondary" onclick="location.href='/index.html'">Adventure Hub</button></div></div>
 </section>
 
 <dialog id="settingsDlg"><form method="dialog" style="padding:20px;min-width:min(90vw,500px)"><h2>Code Quest Settings</h2><label><input id="autoRead" type="checkbox"> Auto-read directions/questions</label><p class="tiny">Progress and learning-support stats save on this device.</p><button class="btn" value="cancel">Close</button></form></dialog>
-<script type="module" src="app.js"></script>
+<script type="module" src="/worlds/code/app.js"></script>
 </div></body></html>
