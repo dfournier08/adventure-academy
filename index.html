@@ -9,112 +9,96 @@
 <body>
   <div class="app-shell">
     <header class="topbar">
-      <div>
-        <div class="eyebrow">WELCOME TO</div>
-        <h1>✨ Adventure Academy</h1>
-      </div>
+      <div><div class="eyebrow">WELCOME TO</div><h1>✨ Adventure Academy</h1></div>
       <div class="player-strip">
         <div class="stat">⭐ <span id="pointsValue">0</span></div>
         <div class="stat">🔥 <span id="curiosityValue">0</span></div>
-        <button class="ghost-btn" id="settingsBtn">⚙ Grown-Up Settings</button>
+        <button class="ghost-btn" id="grownUpBtn" aria-label="Grown-Up Settings">⚙ Grown-Up Settings</button>
       </div>
     </header>
-
     <main>
       <section class="hero-card">
         <div class="hero-copy">
           <span class="mini-badge">PLAYER PROFILE</span>
           <h2 id="welcomeName">Welcome, Fashion Star!</h2>
-          <p>
-            Learn, solve, build, code, lead, investigate, invent, and unlock real-world challenges.
-          </p>
+          <p>Learn, solve, build, code, lead, investigate, invent, and unlock real-world challenges.</p>
           <div class="progress-line">
-            <div>
-              <strong>Academy Progress</strong>
-              <span id="academyProgressText">0 worlds completed</span>
-            </div>
+            <div><strong>Academy Progress</strong><span id="academyProgressText">0 worlds completed</span></div>
             <div class="progress-track"><div id="academyProgressBar"></div></div>
           </div>
         </div>
-        <div class="avatar-card">
-          <div class="avatar-preview" aria-label="blocky academy avatar">
-            <div class="hair"></div>
-            <div class="head"></div>
-            <div class="eye left"></div>
-            <div class="eye right"></div>
-            <div class="smile"></div>
-            <div class="torso"></div>
-            <div class="arm left"></div>
-            <div class="arm right"></div>
-            <div class="leg left"></div>
-            <div class="leg right"></div>
-          </div>
-        </div>
+        <div class="avatar-card"><div class="avatar-preview" aria-label="blocky academy avatar">
+          <div class="hair"></div><div class="head"></div><div class="eye left"></div><div class="eye right"></div>
+          <div class="smile"></div><div class="torso"></div><div class="arm left"></div><div class="arm right"></div>
+          <div class="leg left"></div><div class="leg right"></div>
+        </div></div>
       </section>
-
       <section class="section-heading">
-        <div>
-          <span class="eyebrow">YOUR MAP</span>
-          <h2>Choose a World</h2>
-        </div>
+        <div><span class="eyebrow">YOUR MAP</span><h2>Choose a World</h2></div>
         <button class="ghost-btn" id="refreshBtn">↻ Refresh Progress</button>
       </section>
-
       <section id="worldGrid" class="world-grid"></section>
-
       <section class="achievement-panel">
-        <div>
-          <span class="eyebrow">BADGE CASE</span>
-          <h2>Achievements</h2>
-        </div>
+        <div><span class="eyebrow">BADGE CASE</span><h2>Achievements</h2></div>
         <div id="badgeGrid" class="badge-grid"></div>
       </section>
     </main>
   </div>
 
-  <dialog id="settingsDialog">
+  <dialog id="pinDialog">
     <form method="dialog" class="settings-card">
-      <div class="modal-head">
-        <div>
-          <span class="eyebrow">GROWN-UP CONTROLS</span>
-          <h2>Academy Settings</h2>
-        </div>
-        <button class="icon-btn" value="cancel">✕</button>
-      </div>
-
-      <label>
-        Player name
-        <input id="playerNameInput" type="text" maxlength="30" />
-      </label>
-
-      <label>
-        Grand prize
-        <input id="grandPrizeInput" type="text" maxlength="80" />
-      </label>
-
-      <div class="setting-block">
-        <strong>Testing controls</strong>
-        <p class="small">Useful while we are building new worlds.</p>
-        <div class="button-row">
-          <button type="button" class="secondary-btn" id="unlockAllBtn">Unlock All Worlds</button>
-          <button type="button" class="danger-btn" id="resetBtn">Reset Progress</button>
-        </div>
-      </div>
-
-      <div class="setting-block">
-        <strong>Cloud status</strong>
-        <p class="small" id="cloudStatus">
-          Local save active. Firebase is scaffolded but not connected yet.
-        </p>
-      </div>
-
-      <div class="button-row">
-        <button type="button" class="primary-btn" id="saveSettingsBtn">Save Settings</button>
-        <button class="ghost-btn" value="cancel">Close</button>
-      </div>
+      <div class="modal-head"><div><span class="eyebrow">GROWN-UPS ONLY</span><h2>Enter PIN</h2></div><button class="icon-btn" value="cancel">✕</button></div>
+      <p class="small">Enter the 4-digit grown-up PIN.</p>
+      <label>PIN<input id="pinInput" type="password" inputmode="numeric" maxlength="4" autocomplete="off" /></label>
+      <p id="pinError" class="small" style="color:#b52d3a;min-height:1.2em"></p>
+      <div class="button-row"><button type="button" class="primary-btn" id="pinSubmitBtn">Open Grown-Up Settings</button><button class="ghost-btn" value="cancel">Cancel</button></div>
     </form>
   </dialog>
 
+  <dialog id="settingsDialog">
+    <form method="dialog" class="settings-card">
+      <div class="modal-head"><div><span class="eyebrow">GROWN-UP CONTROLS</span><h2>Academy Settings</h2></div><button class="icon-btn" value="cancel">✕</button></div>
+      <label>Player name<input id="playerNameInput" type="text" maxlength="30" /></label>
+      <label>Grand prize<input id="grandPrizeInput" type="text" maxlength="80" /></label>
+
+      <div class="setting-block">
+        <strong>🎟 Prize Center</strong>
+        <p class="small">Configure prizes privately before they are earned.</p>
+        <button type="button" class="secondary-btn" id="prizeCenterBtn">Open Prize Center</button>
+      </div>
+
+      <div class="setting-block">
+        <strong>🔊 Reading & learning support</strong>
+        <p class="small">Spoken directions, hints, solve/help statistics, and difficulty controls will live in this protected grown-up area as those systems are expanded.</p>
+      </div>
+
+      <div class="setting-block">
+        <strong>🔓 Development/Test Mode</strong>
+        <p class="small">Unlocks all worlds for adult testing. It does not count as player progress.</p>
+        <button type="button" class="secondary-btn" id="unlockAllBtn">Unlock All Worlds</button>
+      </div>
+
+      <div class="setting-block">
+        <strong>🔐 Grown-Up PIN</strong>
+        <p class="small">Change the 4-digit PIN. Default for this hotfix is <strong>2468</strong>. Change it before Jayce uses the game.</p>
+        <label>New 4-digit PIN<input id="newPinInput" type="password" inputmode="numeric" maxlength="4" placeholder="4 digits" /></label>
+        <button type="button" class="secondary-btn" id="changePinBtn">Change PIN</button>
+      </div>
+
+      <div class="setting-block">
+        <strong>☁ Cloud status</strong>
+        <p class="small" id="cloudStatus">Local save active. Firebase is scaffolded but not connected yet.</p>
+      </div>
+
+      <div class="setting-block" style="border-color:#f0a5ad;background:#fff2f3">
+        <strong>⚠ Reset Entire Game</strong>
+        <p class="small">Erases Academy progress on this device. Requires a warning plus typing RESET.</p>
+        <button type="button" class="danger-btn" id="resetBtn">Reset Entire Game</button>
+      </div>
+
+      <div class="button-row"><button type="button" class="primary-btn" id="saveSettingsBtn">Save Settings</button><button class="ghost-btn" value="cancel">Close</button></div>
+    </form>
+  </dialog>
   <script type="module" src="js/app.js"></script>
 </body>
 </html>

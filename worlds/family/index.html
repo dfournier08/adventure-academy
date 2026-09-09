@@ -1,8 +1,31 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Family Super Challenges</title>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Family Super Challenges</title>
 <style>
-body{margin:0;min-height:100vh;font-family:Arial,sans-serif;background:radial-gradient(circle at 50% 0,#fff2a9 0 13%,transparent 31%),linear-gradient(135deg,#ffe8f4,#e5f6ff);color:#362947}.wrap{max-width:1000px;margin:auto;padding:24px}.hero,.card{background:#fff;border:4px solid #fff;border-radius:28px;padding:24px;box-shadow:0 17px 42px #46325a24}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}.card{padding:17px}.icon{font-size:46px}h1{font-size:clamp(34px,6vw,60px);margin:.3rem 0}.boss{background:linear-gradient(135deg,#fff3b7,#ffe2f1);border:3px solid #ffd867;border-radius:20px;padding:18px;margin-top:18px}a{display:inline-block;margin-top:18px;padding:12px 18px;border-radius:15px;background:linear-gradient(135deg,#ffb22d,#9a67ea);color:#fff;text-decoration:none;font-weight:900}</style></head>
-<body><div class="wrap"><section class="hero"><div class="icon">🌟</div><h1>Family Super Challenges</h1><p><strong>The real-world boss levels.</strong></p><p>These missions combine skills from several Academy worlds and bring Grandma, Grandpa, and your learner together for one bigger project.</p>
-<div class="grid"><div class="card"><div class="icon">⚙️</div><h2>Engineering</h2><p>Plan and build the working part.</p></div><div class="card"><div class="icon">🎨</div><h2>Creative Design</h2><p>Decorate, personalize, and make thoughtful design choices.</p></div><div class="card"><div class="icon">🔬</div><h2>Science</h2><p>Research how and why the project works.</p></div><div class="card"><div class="icon">💰</div><h2>Budget</h2><p>Estimate materials and make smart choices.</p></div></div>
-<div class="boss"><h2>🌟 Example Super Challenge: Build a Birdhouse</h2><p><strong>Grandpa:</strong> help plan, measure, cut, assemble, and test.</p><p><strong>Grandma:</strong> help choose a theme, decorate, weather-protect, and create a bird-watching journal.</p><p><strong>Learner:</strong> research a local bird, set requirements, make design choices, track cost, choose placement, and observe whether birds visit.</p></div>
-<a href="../../index.html">← Back to Adventure Hub</a></section></div></body></html>
+body{margin:0;min-height:100vh;font-family:Arial,sans-serif;background:linear-gradient(135deg,#fff7fb,#eaf8ff);color:#34254a}
+.wrap{max-width:900px;margin:auto;padding:20px}.card{background:#fff;border-radius:26px;padding:24px;box-shadow:0 16px 40px #4d376522}
+.option{display:block;width:100%;text-align:left;margin:10px 0;padding:15px;border:3px solid #e4daf5;background:#fff;border-radius:16px;font-weight:800;cursor:pointer}
+.btn{display:inline-block;padding:12px 18px;border-radius:15px;background:linear-gradient(135deg,#ff5fbe,#8b5cf6);color:white;text-decoration:none;font-weight:900;border:0}
+.note{background:#fff3bd;border-radius:16px;padding:14px;margin:14px 0}
+</style>
+</head>
+<body><div class="wrap"><div class="card">
+<div style="font-size:50px">🌟</div><h1>Family Super Challenges</h1>
+<p><strong>Build • Create • Research • Share</strong></p>
+<p>Complete special real-world family missions.</p>
+<div class="note"><strong>Development Sandbox:</strong> This world is not fully built yet, but the test mode now lets you interact with a sample challenge rather than only reading a description.</div>
+<h2>Try a sample challenge</h2>
+<p id="q">A birdhouse project needs both building and decorating. Which is the best plan?</p>
+<div id="opts"></div>
+<p id="feedback" style="font-weight:900"></p>
+<a class="btn" href="../../index.html">← Back to Adventure Hub</a>
+</div></div>
+<script>
+const opts=["Build first, decorate after", "Decorate the loose boards first", "Skip planning"];
+const correct=0;
+const box=document.getElementById('opts');
+opts.forEach((t,i)=>{const b=document.createElement('button');b.className='option';b.textContent=t;b.onclick=()=>{document.getElementById('feedback').textContent=i===correct?'✅ Good thinking!':'💡 Try another choice.'};box.appendChild(b)});
+</script>
+</body></html>

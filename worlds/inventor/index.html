@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Inventor Lab</title>
 <style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;font-family:Arial,sans-serif;background:linear-gradient(135deg,#fff3fb,#eaf8ff);color:#34254a}
-.card{max-width:720px;margin:24px;background:white;border-radius:28px;padding:28px;box-shadow:0 18px 45px #4d376528;border:4px solid #fff}
-h1{font-size:clamp(32px,6vw,56px)}
-a{display:inline-block;padding:12px 18px;border-radius:15px;background:linear-gradient(135deg,#ff5fbe,#8b5cf6);color:#fff;text-decoration:none;font-weight:900}
-.preview{background:#f8f3ff;border:2px solid #e5d9f5;border-radius:18px;padding:16px;margin:18px 0}
+body{margin:0;min-height:100vh;font-family:Arial,sans-serif;background:linear-gradient(135deg,#fff7fb,#eaf8ff);color:#34254a}
+.wrap{max-width:900px;margin:auto;padding:20px}.card{background:#fff;border-radius:26px;padding:24px;box-shadow:0 16px 40px #4d376522}
+.option{display:block;width:100%;text-align:left;margin:10px 0;padding:15px;border:3px solid #e4daf5;background:#fff;border-radius:16px;font-weight:800;cursor:pointer}
+.btn{display:inline-block;padding:12px 18px;border-radius:15px;background:linear-gradient(135deg,#ff5fbe,#8b5cf6);color:white;text-decoration:none;font-weight:900;border:0}
+.note{background:#fff3bd;border-radius:16px;padding:14px;margin:14px 0}
 </style>
 </head>
-<body>
-<div class="card">
-  <div style="font-size:48px">⚙️</div>
-  <h1>Inventor Lab</h1>
-  <p><strong>Design • Build • Test • Improve</strong></p>
-  <div class="preview">
-    <h2>World preview</h2>
-    <p>Solve engineering problems, test ideas, improve designs, and unlock build challenges.</p>
-    <p>This world is part of the new modular Adventure Academy structure. The full playable version will be added as its own module.</p>
-  </div>
-  <a href="../../index.html">← Back to Adventure Hub</a>
-</div>
-</body>
-</html>
+<body><div class="wrap"><div class="card">
+<div style="font-size:50px">⚙️</div><h1>Inventor Lab</h1>
+<p><strong>Design • Build • Test • Improve</strong></p>
+<p>Solve engineering problems and improve designs.</p>
+<div class="note"><strong>Development Sandbox:</strong> This world is not fully built yet, but the test mode now lets you interact with a sample challenge rather than only reading a description.</div>
+<h2>Try a sample challenge</h2>
+<p id="q">A block tower keeps falling. What is a smart first change?</p>
+<div id="opts"></div>
+<p id="feedback" style="font-weight:900"></p>
+<a class="btn" href="../../index.html">← Back to Adventure Hub</a>
+</div></div>
+<script>
+const opts=["Wider base", "Heavier top", "Push it"];
+const correct=0;
+const box=document.getElementById('opts');
+opts.forEach((t,i)=>{const b=document.createElement('button');b.className='option';b.textContent=t;b.onclick=()=>{document.getElementById('feedback').textContent=i===correct?'✅ Good thinking!':'💡 Try another choice.'};box.appendChild(b)});
+</script>
+</body></html>

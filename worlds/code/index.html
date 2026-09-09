@@ -1,28 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Code Quest</title>
-<style>
-body{margin:0;min-height:100vh;display:grid;place-items:center;font-family:Arial,sans-serif;background:linear-gradient(135deg,#fff3fb,#eaf8ff);color:#34254a}
-.card{max-width:720px;margin:24px;background:white;border-radius:28px;padding:28px;box-shadow:0 18px 45px #4d376528;border:4px solid #fff}
-h1{font-size:clamp(32px,6vw,56px)}
-a{display:inline-block;padding:12px 18px;border-radius:15px;background:linear-gradient(135deg,#ff5fbe,#8b5cf6);color:#fff;text-decoration:none;font-weight:900}
-.preview{background:#f8f3ff;border:2px solid #e5d9f5;border-radius:18px;padding:16px;margin:18px 0}
-</style>
-</head>
-<body>
-<div class="card">
-  <div style="font-size:48px">💻</div>
-  <h1>Code Quest</h1>
-  <p><strong>Sequences • Loops • Debugging</strong></p>
-  <div class="preview">
-    <h2>World preview</h2>
-    <p>Program a character with visual commands, then transition toward real Roblox/Luau concepts.</p>
-    <p>This world is part of the new modular Adventure Academy structure. The full playable version will be added as its own module.</p>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Code Quest</title><link rel="stylesheet" href="style.css"></head>
+<body><div class="wrap">
+<header class="top">
+  <div><div class="tiny">ADVENTURE ACADEMY</div><h1>💻 Code Quest</h1></div>
+  <div class="toolbar">
+    <button class="btn secondary" onclick="speakPage()">🔊 Read Page</button>
+    <button class="btn secondary" onclick="location.href='../../index.html'">← Adventure Hub</button>
   </div>
-  <a href="../../index.html">← Back to Adventure Hub</a>
+</header>
+<div class="stats"><div class="pill">⭐ <span id="points">0</span> pts</div><div class="pill">🏅 <span id="sectionsDone">0</span>/5 sections</div><div class="pill">💡 Hints: <span id="hintsStat">0</span></div><div class="pill">🧩 Solves: <span id="solvesStat">0</span></div></div>
+
+<section id="home" class="screen active">
+<h2 class="sectionTitle">Welcome to Code Quest!</h2>
+<p>Help the explorer reach stars, collect gems, repeat commands, make choices, and fix broken programs.</p>
+<div class="helpBox"><strong>How it works:</strong> Tap command buttons to build a program. Press RUN to test it. If you need help, use a Hint. After the hint has been open for 3 minutes, Show Me How becomes available. If Show Me How is used, the puzzle comes back later for an independent practice try before points are earned.</div>
+<div class="toolbar" style="margin-top:16px"><button class="btn" onclick="showMap()">Choose a Section</button><button class="btn secondary" onclick="openSettings()">⚙ Code Quest Settings</button></div>
+</section>
+
+<section id="map" class="screen">
+<div class="toolbar"><button class="btn secondary" onclick="showScreen('home')">← Code Quest Home</button></div>
+<h2>Choose a Coding Section</h2><div id="sectionGrid" class="gridcards"></div>
+</section>
+
+<section id="game" class="screen">
+<div class="toolbar"><button class="btn secondary" onclick="showMap()">← Sections</button><button class="btn secondary" onclick="speakQuestion()">🔊 Read Question</button></div>
+<h2 id="gameTitle"></h2><div class="progress"><div id="progressBar"></div></div>
+<div id="practiceBanner"></div>
+<p id="prompt" style="font-size:1.25rem;font-weight:900"></p>
+<div class="gameLayout">
+  <div><div id="board" class="board"></div></div>
+  <div>
+    <h3>Your Program</h3><div id="program" class="program"></div>
+    <div id="commandBar" class="commandBar"></div>
+    <div class="toolbar"><button class="btn good" onclick="runProgram()">▶ RUN</button><button class="btn secondary" onclick="undoCommand()">Undo</button><button class="btn secondary" onclick="clearProgram()">Clear</button></div>
+    <div id="feedback" class="feedback"></div>
+    <div class="toolbar"><button class="btn hint" onclick="useHint()">💡 Give Me a Hint</button><button id="solveBtn" class="btn solve" onclick="showSolve()" disabled>🧩 Show Me How</button></div>
+    <div id="hintBox"></div><div id="solveBox"></div>
+  </div>
 </div>
-</body>
-</html>
+</section>
+
+<section id="sectionComplete" class="screen">
+<h2>🎉 Section Complete!</h2><p id="sectionSummary"></p><div class="toolbar"><button class="btn" onclick="showMap()">Back to Sections</button><button class="btn secondary" onclick="window.print()">Print Section Ticket</button></div>
+<div class="ticket printable"><h2>💻 Code Quest Section Ticket</h2><p id="ticketText"></p><p><strong>Prize:</strong> ______________________________</p></div>
+</section>
+
+<section id="worldComplete" class="screen">
+<div class="ticket"><h1>🏆 Code Explorer Badge Earned!</h1><p>You completed all 5 Code Quest sections.</p><p><strong>Total Code Quest Points:</strong> <span id="worldPoints"></span></p><p><strong>World Prize:</strong> <span id="worldPrize"></span></p><div class="toolbar noPrint"><button class="btn" onclick="window.print()">Print Prize Ticket</button><button class="btn secondary" onclick="location.href='../../index.html'">Adventure Hub</button></div></div>
+</section>
+
+<dialog id="settingsDlg"><form method="dialog" style="padding:20px;min-width:min(90vw,500px)"><h2>Code Quest Settings</h2><label><input id="autoRead" type="checkbox"> Auto-read directions/questions</label><p class="tiny">Progress and learning-support stats save on this device.</p><button class="btn" value="cancel">Close</button></form></dialog>
+<script type="module" src="app.js"></script>
+</div></body></html>
