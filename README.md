@@ -1,36 +1,27 @@
-# Adventure Academy v0.2
+# Adventure Academy v0.3 Update
 
-Adventure Academy is a modular learning platform built around short digital worlds, rewards, creativity, problem solving, and real-world family projects.
+This update modifies Glam Quest only.
 
-## v0.2 additions
+## New learning-support features
+- Read Page button for spoken directions
+- Auto-read directions setting
+- Read Question button that reads the question and choices
+- Hint button for Math and Logic / Problem Solving
+- Show Me How button unlocks 3 minutes after Hint
+- Step-by-step solution support
+- If Show Me How is used, the question returns later and points are awarded only after an independent correct retry
+- Help usage is tracked in Grown-Up Settings and printed on section tickets
 
-- Added Grandma's Creative Workshop
-- Added Family Super Challenges
-- Expanded Grandpa's Workshop preview
-- Added workshop and world category tags to the Adventure Hub
-- Added unlock support for completing multiple prerequisite worlds
-- Expanded the badge case from 8 to 10 worlds
-- Updated the roadmap and progression plan
+## Install
+Copy the contents of this update folder into the root of your existing Adventure_Academy project and replace matching files.
 
-## Current worlds
+Then test:
+`firebase serve --only hosting`
 
-1. Glam Quest
-2. Leadership Academy
-3. Detective Academy
-4. Code Quest
-5. Science Lab
-6. Business Boulevard
-7. Inventor Lab
-8. Grandpa's Workshop
-9. Grandma's Creative Workshop
-10. Family Super Challenges
+Commit:
+`git add .`
+`git commit -m "Add spoken directions and guided problem solving"`
+`git push`
 
-## Real-world workshop philosophy
-
-Grandpa's Workshop emphasizes Build It, Fix It, and Invent It.
-Grandma's Workshop emphasizes Craft It, Make It, Cook It, Grow It, Give It, and Reuse It.
-Family Super Challenges combine multiple Academy skills into larger projects for Grandma, Grandpa, and the learner to complete together.
-
-## Important deployment note
-
-This v0.2 update intentionally does not include `.firebaserc` or replace your Firebase project association. Apply the update to your existing Adventure_Academy repository, test locally, commit to GitHub, and deploy to the existing Firebase Hosting project.
+Deploy:
+`firebase deploy --only hosting`

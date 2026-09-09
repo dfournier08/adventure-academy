@@ -7,7 +7,7 @@
 <style>
 :root{--pink:#ff5dbd;--purple:#8b5cf6;--blue:#59c8ff;--gold:#ffd65a;--ink:#34254a;--good:#35c978;--bad:#ff6f75;--panel:#ffffffee}
 *{box-sizing:border-box} body{margin:0;min-height:100vh;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:radial-gradient(circle at 12% 10%,#ffd9ee 0 16%,transparent 34%),radial-gradient(circle at 90% 16%,#ddd4ff 0 16%,transparent 33%),linear-gradient(135deg,#fff7fb,#eaf8ff)}
-button,input{font:inherit}.wrap{max-width:1180px;margin:auto;padding:18px}.top{display:flex;gap:12px;justify-content:space-between;align-items:center;flex-wrap:wrap;margin-bottom:14px}.brand{font-size:clamp(26px,4vw,44px);font-weight:900}.stats{display:flex;gap:8px;flex-wrap:wrap}.pill{background:white;border:3px solid #eadcff;border-radius:999px;padding:9px 13px;font-weight:900;box-shadow:0 5px 0 #d9c9f7}.screen{display:none;background:var(--panel);padding:24px;border-radius:28px;box-shadow:0 18px 45px #5b3f7d28;border:4px solid #fff}.screen.active{display:block}h1,h2,h3{margin-top:0}.btn{border:0;border-radius:17px;padding:13px 20px;font-weight:900;cursor:pointer;color:#fff;background:linear-gradient(135deg,var(--pink),var(--purple));box-shadow:0 6px 0 #6740b5}.btn.secondary{background:linear-gradient(135deg,#64d3ff,#478dff);box-shadow:0 6px 0 #316dcc}.btn.good{background:linear-gradient(135deg,#4cdb91,#29b66e);box-shadow:0 6px 0 #1f8d58}.btn.gray{background:linear-gradient(135deg,#9aa1ac,#6e7580);box-shadow:0 6px 0 #555b64}.btn:disabled{opacity:.45;cursor:not-allowed}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}.card{background:#fff;border:3px solid #eadcff;border-radius:22px;padding:18px;box-shadow:0 9px 20px #4e36731c}.locked{opacity:.48}.stageCard:nth-child(1){background:#ffe3f2}.stageCard:nth-child(2){background:#e9e0ff}.stageCard:nth-child(3){background:#e2f6ff}.stageCard:nth-child(4){background:#fff2bd}.stageCard:nth-child(5){background:#e4f9e7}.progress{height:18px;background:#ede7f7;border-radius:999px;overflow:hidden;margin:14px 0}.progress>div{height:100%;background:linear-gradient(90deg,var(--pink),var(--purple),var(--blue));width:0;transition:.25s}.question{font-size:clamp(23px,3.5vw,36px);font-weight:900;margin:18px 0}.answers{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}.answer{background:white;border:3px solid #e4daf5;border-radius:17px;padding:16px;font-weight:800;text-align:left;cursor:pointer}.answer.correct{background:#ddf8e9;border-color:var(--good)}.answer.wrong{background:#ffe3e5;border-color:var(--bad)}.feedback{min-height:48px;margin-top:14px;font-size:18px;font-weight:800}.choiceGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px}.choice{border:4px solid #eadcff;border-radius:20px;background:white;padding:16px;cursor:pointer;text-align:center}.choice.selected{border-color:var(--pink);box-shadow:0 0 0 5px #ff5dbd28}.swatch{height:92px;border-radius:16px;margin-bottom:10px;border:3px solid #6a587d}.closet{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}.closetItem{background:#faf7ff;border:2px solid #e8def6;border-radius:16px;padding:12px;text-align:center}.avatar{width:260px;height:360px;margin:10px auto;position:relative;filter:drop-shadow(0 14px 12px #51386e33)}.part{position:absolute;border:4px solid #5c4d72}.head{width:116px;height:104px;left:72px;top:30px;background:#f0c5a1;border-radius:18px;z-index:3}.hair{width:126px;height:58px;left:67px;top:20px;background:#5b3e31;border-radius:28px 28px 12px 12px;z-index:5}.hair:after{content:"";position:absolute;left:18px;right:18px;bottom:-22px;height:28px;background:inherit;border-radius:0 0 18px 18px}.topPart{width:126px;height:112px;left:67px;top:134px;background:#ff5dbd;border-radius:15px;z-index:2}.bottomPart{width:126px;height:72px;left:67px;top:235px;background:#8ed9ff;border-radius:12px;z-index:1}.shoe{width:55px;height:34px;top:310px;background:#8b5cf6;border-radius:10px}.shoe.l{left:62px}.shoe.r{right:62px}.arm{width:34px;height:104px;top:143px;background:#f0c5a1;border-radius:12px;z-index:1}.arm.l{left:26px;transform:rotate(5deg)}.arm.r{right:26px;transform:rotate(-5deg)}.eye{position:absolute;width:10px;height:10px;background:#33283f;border-radius:50%;top:74px;z-index:6}.eye.l{left:105px}.eye.r{left:145px}.smile{position:absolute;width:38px;height:17px;border-bottom:5px solid #ba6077;border-radius:50%;top:91px;left:111px;z-index:6}.accessory{position:absolute;z-index:8}.ticket{border:4px dashed var(--purple);border-radius:24px;background:#fff;padding:24px;max-width:760px;margin:16px auto}.big{font-size:32px;font-weight:900;color:var(--purple)}.ticketLayout{display:grid;grid-template-columns:280px 1fr;gap:18px;align-items:center}.settingsRow{display:grid;grid-template-columns:220px 1fr;gap:10px;margin:10px 0;align-items:center}.settingsRow input{padding:10px;border:2px solid #d9cdec;border-radius:10px;width:100%}.tiny{font-size:13px;opacity:.72}.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 18px}.sectionBadge{display:inline-block;padding:7px 12px;border-radius:999px;background:#f0e8ff;font-weight:900}.prizeBanner{background:linear-gradient(135deg,#fff1b8,#ffe0f0);border:3px solid #ffd16a;border-radius:18px;padding:14px;margin:14px 0;font-weight:800}
+button,input{font:inherit}.wrap{max-width:1180px;margin:auto;padding:18px}.top{display:flex;gap:12px;justify-content:space-between;align-items:center;flex-wrap:wrap;margin-bottom:14px}.brand{font-size:clamp(26px,4vw,44px);font-weight:900}.stats{display:flex;gap:8px;flex-wrap:wrap}.pill{background:white;border:3px solid #eadcff;border-radius:999px;padding:9px 13px;font-weight:900;box-shadow:0 5px 0 #d9c9f7}.screen{display:none;background:var(--panel);padding:24px;border-radius:28px;box-shadow:0 18px 45px #5b3f7d28;border:4px solid #fff}.screen.active{display:block}h1,h2,h3{margin-top:0}.btn{border:0;border-radius:17px;padding:13px 20px;font-weight:900;cursor:pointer;color:#fff;background:linear-gradient(135deg,var(--pink),var(--purple));box-shadow:0 6px 0 #6740b5}.btn.secondary{background:linear-gradient(135deg,#64d3ff,#478dff);box-shadow:0 6px 0 #316dcc}.btn.good{background:linear-gradient(135deg,#4cdb91,#29b66e);box-shadow:0 6px 0 #1f8d58}.btn.gray{background:linear-gradient(135deg,#9aa1ac,#6e7580);box-shadow:0 6px 0 #555b64}.btn:disabled{opacity:.45;cursor:not-allowed}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}.card{background:#fff;border:3px solid #eadcff;border-radius:22px;padding:18px;box-shadow:0 9px 20px #4e36731c}.locked{opacity:.48}.stageCard:nth-child(1){background:#ffe3f2}.stageCard:nth-child(2){background:#e9e0ff}.stageCard:nth-child(3){background:#e2f6ff}.stageCard:nth-child(4){background:#fff2bd}.stageCard:nth-child(5){background:#e4f9e7}.progress{height:18px;background:#ede7f7;border-radius:999px;overflow:hidden;margin:14px 0}.progress>div{height:100%;background:linear-gradient(90deg,var(--pink),var(--purple),var(--blue));width:0;transition:.25s}.question{font-size:clamp(23px,3.5vw,36px);font-weight:900;margin:18px 0}.answers{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}.answer{background:white;border:3px solid #e4daf5;border-radius:17px;padding:16px;font-weight:800;text-align:left;cursor:pointer}.answer.correct{background:#ddf8e9;border-color:var(--good)}.answer.wrong{background:#ffe3e5;border-color:var(--bad)}.feedback{min-height:48px;margin-top:14px;font-size:18px;font-weight:800}.choiceGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px}.choice{border:4px solid #eadcff;border-radius:20px;background:white;padding:16px;cursor:pointer;text-align:center}.choice.selected{border-color:var(--pink);box-shadow:0 0 0 5px #ff5dbd28}.swatch{height:92px;border-radius:16px;margin-bottom:10px;border:3px solid #6a587d}.closet{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}.closetItem{background:#faf7ff;border:2px solid #e8def6;border-radius:16px;padding:12px;text-align:center}.avatar{width:260px;height:360px;margin:10px auto;position:relative;filter:drop-shadow(0 14px 12px #51386e33)}.part{position:absolute;border:4px solid #5c4d72}.head{width:116px;height:104px;left:72px;top:30px;background:#f0c5a1;border-radius:18px;z-index:3}.hair{width:126px;height:58px;left:67px;top:20px;background:#5b3e31;border-radius:28px 28px 12px 12px;z-index:5}.hair:after{content:"";position:absolute;left:18px;right:18px;bottom:-22px;height:28px;background:inherit;border-radius:0 0 18px 18px}.topPart{width:126px;height:112px;left:67px;top:134px;background:#ff5dbd;border-radius:15px;z-index:2}.bottomPart{width:126px;height:72px;left:67px;top:235px;background:#8ed9ff;border-radius:12px;z-index:1}.shoe{width:55px;height:34px;top:310px;background:#8b5cf6;border-radius:10px}.shoe.l{left:62px}.shoe.r{right:62px}.arm{width:34px;height:104px;top:143px;background:#f0c5a1;border-radius:12px;z-index:1}.arm.l{left:26px;transform:rotate(5deg)}.arm.r{right:26px;transform:rotate(-5deg)}.eye{position:absolute;width:10px;height:10px;background:#33283f;border-radius:50%;top:74px;z-index:6}.eye.l{left:105px}.eye.r{left:145px}.smile{position:absolute;width:38px;height:17px;border-bottom:5px solid #ba6077;border-radius:50%;top:91px;left:111px;z-index:6}.accessory{position:absolute;z-index:8}.ticket{border:4px dashed var(--purple);border-radius:24px;background:#fff;padding:24px;max-width:760px;margin:16px auto}.big{font-size:32px;font-weight:900;color:var(--purple)}.ticketLayout{display:grid;grid-template-columns:280px 1fr;gap:18px;align-items:center}.settingsRow{display:grid;grid-template-columns:220px 1fr;gap:10px;margin:10px 0;align-items:center}.settingsRow input{padding:10px;border:2px solid #d9cdec;border-radius:10px;width:100%}.tiny{font-size:13px;opacity:.72}.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 18px}.sectionBadge{display:inline-block;padding:7px 12px;border-radius:999px;background:#f0e8ff;font-weight:900}.prizeBanner{background:linear-gradient(135deg,#fff1b8,#ffe0f0);border:3px solid #ffd16a;border-radius:18px;padding:14px;margin:14px 0;font-weight:800}.helpbar{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}.helpPanel{display:none;background:#fff7d7;border:3px solid #ffd568;border-radius:18px;padding:15px;margin:12px 0;font-weight:800;line-height:1.5}.helpPanel.show{display:block}.solutionPanel{background:#eaf8ff;border-color:#65c9ff}.timerText{font-size:14px;font-weight:900;opacity:.8}.retryBanner{display:none;background:#e6f8ec;border:3px solid #4bcf87;border-radius:16px;padding:11px;margin:10px 0;font-weight:900}.retryBanner.show{display:block}.speakBtn{background:linear-gradient(135deg,#6f82ff,#8b5cf6)!important;box-shadow:0 6px 0 #5747ad!important}.settingsRow input[type="checkbox"]{width:24px;height:24px}.helpSummary{background:#f4efff;border:2px solid #dfd3f2;border-radius:16px;padding:14px;margin:14px 0}.solveLocked{opacity:.55}
 @media(max-width:720px){.ticketLayout{grid-template-columns:1fr}.settingsRow{grid-template-columns:1fr}.avatar{transform:scale(.9);transform-origin:top center}}
 @media print{body *{visibility:hidden}.printable,.printable *{visibility:visible}.printable{position:absolute!important;left:0;top:0;width:100%;display:block!important;box-shadow:none!important;border:none!important}.noPrint{display:none!important}}
 </style>
@@ -19,6 +19,7 @@ button,input{font:inherit}.wrap{max-width:1180px;margin:auto;padding:18px}.top{d
     <div class="stats">
       <div class="pill">⭐ <span id="points">0</span> pts</div>
       <div class="pill">👗 <span id="earnedCount">0</span>/5 glam pieces</div>
+      <button class="btn speakBtn noPrint" onclick="readActivePage()">🔊 Read Page</button>
       <button class="btn gray noPrint" onclick="openSettings()">⚙ Prize Settings</button>
     </div>
   </div>
@@ -48,12 +49,20 @@ button,input{font:inherit}.wrap{max-width:1180px;margin:auto;padding:18px}.top{d
   </section>
 
   <section id="quiz" class="screen">
-    <div class="toolbar"><button class="btn secondary" onclick="openStage(currentStage)">← Back</button></div>
+    <div class="toolbar"><button class="btn secondary" onclick="openStage(currentStage)">← Back</button><button class="btn speakBtn" onclick="readCurrentQuestion()">🔊 Read Question</button></div>
     <span id="sectionBadge" class="sectionBadge"></span>
     <h2 id="quizTitle"></h2>
+    <div id="retryBanner" class="retryBanner">🔁 Practice Try: You saw help on this one earlier. Solve it on your own now to earn the points.</div>
     <div class="progress"><div id="quizProgress"></div></div>
     <div id="question" class="question"></div>
     <div id="answers" class="answers"></div>
+    <div id="helpBar" class="helpbar">
+      <button id="hintBtn" class="btn secondary" onclick="showHint()">💡 Give Me a Hint</button>
+      <button id="solveBtn" class="btn gray solveLocked" onclick="showSolution()" disabled>🧩 Show Me How</button>
+      <span id="solveTimer" class="timerText"></span>
+    </div>
+    <div id="hintPanel" class="helpPanel"></div>
+    <div id="solutionPanel" class="helpPanel solutionPanel"></div>
     <div id="feedback" class="feedback"></div>
     <button id="nextBtn" class="btn good" style="display:none" onclick="nextQuestion()">Next →</button>
   </section>
@@ -92,6 +101,7 @@ button,input{font:inherit}.wrap{max-width:1180px;margin:auto;padding:18px}.top{d
       <p><strong>Quest:</strong> <span id="sectionTicketQuest"></span></p>
       <p><strong>Section:</strong> <span id="sectionTicketSection"></span></p>
       <p><strong>Score:</strong> <span id="sectionTicketScore"></span>/10</p>
+      <p><strong>Learning help:</strong> <span id="sectionTicketHelp"></span></p>
       <p><strong>Prize:</strong> <span id="sectionTicketPrize"></span></p>
       <p><strong>Grandma / Grandpa Approval:</strong> ______________________________</p>
       <p class="tiny">Great work — keep going to unlock the next glam piece.</p>
@@ -123,6 +133,8 @@ button,input{font:inherit}.wrap{max-width:1180px;margin:auto;padding:18px}.top{d
     <div class="settingsRow"><strong>Player name</strong><input id="setName"></div>
     <div id="prizeSettings"></div>
     <div class="settingsRow"><strong>Grand Prize</strong><input id="grandPrizeInput"></div>
+    <div class="settingsRow"><strong>Auto-read directions</strong><input id="autoSpeakInput" type="checkbox"></div>
+    <div id="helpSummary" class="helpSummary"></div>
     <div class="toolbar"><button class="btn good" onclick="saveSettings()">Save Settings</button><button class="btn gray" onclick="resetProgress()">Reset Game Progress</button></div>
   </section>
 </div>
@@ -179,21 +191,41 @@ let defaultState={
  earned:[false,false,false,false,false],
  choices:[null,null,null,null,null],
  prizes:Array.from({length:5},(_,i)=>["Small Prize","Small Prize","Small Prize"]),
- grandPrize:"Grand Prize",
+ grandPrize:"Grand Prize",autoSpeak:true,
+ helpStats:{hintsUsed:0,solvesUsed:0,retriesRecovered:0,retriesRequired:0},helpLog:[],
  currentStage:0,currentSection:0,currentQuestion:0,quizScore:0,
  ticketReturn:null
 };
 let state=JSON.parse(JSON.stringify(defaultState));
 let currentStage=0,currentSection=0,currentQuestions=[],currentAnswerLocked=false,pendingChoice=null;
+let hintShownAt=null,solveTimerId=null,solveUsedForCurrent=false;
+const SOLVE_DELAY_MS=180000;
 
 function load(){
  const s=localStorage.getItem("glamQuestV2");
  if(s){try{state=Object.assign(JSON.parse(JSON.stringify(defaultState)),JSON.parse(s));}catch(e){}}
  if(!state.prizes||state.prizes.length!==5) state.prizes=JSON.parse(JSON.stringify(defaultState.prizes));
+ if(!state.helpStats) state.helpStats=JSON.parse(JSON.stringify(defaultState.helpStats));
+ if(!state.helpLog) state.helpLog=[];
+ if(state.autoSpeak===undefined) state.autoSpeak=true;
  updateStats();
 }
 function save(){localStorage.setItem("glamQuestV2",JSON.stringify(state));updateStats();}
-function screen(id){document.querySelectorAll(".screen").forEach(x=>x.classList.remove("active"));document.getElementById(id).classList.add("active");window.scrollTo(0,0)}
+function screen(id){document.querySelectorAll(".screen").forEach(x=>x.classList.remove("active"));document.getElementById(id).classList.add("active");window.scrollTo(0,0);if(state.autoSpeak&&id!=="quiz")setTimeout(()=>speakText(screenInstructions[id]||""),120)}
+const screenInstructions={
+ home:"Welcome to Glam Quest Academy. Choose Start or Continue Quest to play, or My Closet to see the glam items you have earned.",
+ map:"This is the Glam Quest map. Choose an unlocked fashion studio to continue your quest.",
+ stage:"Choose Math, Reading, or Logic and Problem Solving. Complete all three sections to earn a glam piece.",
+ earn:"Great job. You unlocked a glam piece. Choose the style you like best, then save it to your closet.",
+ closet:"This is your closet. You can change any glam item you have earned. When all five pieces are earned, you can walk the final runway.",
+ runway:"You completed the Glam Quest. Review your final look and open your Grand Prize Ticket when you are ready.",
+ sectionTicket:"You finished this learning section. You can print your prize ticket, then continue the quest.",
+ grandTicket:"Congratulations. This is your Grand Prize Ticket with the character you created.",
+ settings:"This is the grown-up settings page for player name, prizes, reading directions, and learning help information."
+};
+function speakText(text){if(!text||!("speechSynthesis" in window))return;window.speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(text);u.rate=.9;u.pitch=1.05;window.speechSynthesis.speak(u)}
+function readActivePage(){let active=document.querySelector(".screen.active");if(!active)return;let id=active.id;if(id==="quiz"){readCurrentQuestion();return;}speakText(screenInstructions[id]||active.innerText)}
+function readCurrentQuestion(){let q=currentQuestions[state.currentQuestion];if(!q)return;let choices=q.a.map((x,i)=>`Choice ${i+1}: ${x}`).join(". ");speakText(`${q.q}. ${choices}`)}
 function updateStats(){document.getElementById("points").textContent=state.points;document.getElementById("earnedCount").textContent=state.earned.filter(Boolean).length;document.getElementById("playerNameHome").textContent=state.name}
 function goHome(){updateStats();screen("home")}
 function showMap(){renderMap();screen("map")}
@@ -230,53 +262,91 @@ function openStage(i){
 function mathSet(stage){
  let q=[];
  for(let n=0;n<10;n++){
-  let type=(stage+n)%5, a=0,b=0,ans=0,text="",opts=[];
-  if(type===0){a=12+stage*5+n;b=4+(n%7);ans=a+b;text=`What is ${a} + ${b}?`;}
-  if(type===1){a=28+stage*6+n;b=5+(n%8);ans=a-b;text=`What is ${a} - ${b}?`;}
-  if(type===2){a=2+((n+stage)%7);b=2+((n*2+stage)%6);ans=a*b;text=`What is ${a} × ${b}?`;}
-  if(type===3){b=2+((n+stage)%6);ans=2+((n*2+stage)%7);a=b*ans;text=`${a} sparkle gems are shared equally among ${b} friends. How many does each friend get?`;}
-  if(type===4){a=20+stage*10+n*3;b=5+((n+2)%9);ans=a-b;text=`You have ${a} style coins and spend ${b}. How many remain?`;}
+  let type=(stage+n)%5, a=0,b=0,ans=0,text="",opts=[],hint="",solve="";
+  if(type===0){a=12+stage*5+n;b=4+(n%7);ans=a+b;text=`What is ${a} + ${b}?`;hint=`Start at ${a} and count up ${b} more.`;solve=`We are adding. Start with ${a}. Add ${b} more. ${a} plus ${b} equals ${ans}.`;}
+  if(type===1){a=28+stage*6+n;b=5+(n%8);ans=a-b;text=`What is ${a} - ${b}?`;hint=`Start at ${a} and count backward ${b}.`;solve=`We are subtracting. Start with ${a}. Take away ${b}. ${a} minus ${b} equals ${ans}.`;}
+  if(type===2){a=2+((n+stage)%7);b=2+((n*2+stage)%6);ans=a*b;text=`What is ${a} × ${b}?`;hint=`Think of ${a} equal groups with ${b} in each group.`;solve=`Multiplication means equal groups. ${a} groups of ${b} makes ${ans}. So ${a} times ${b} equals ${ans}.`;}
+  if(type===3){b=2+((n+stage)%6);ans=2+((n*2+stage)%7);a=b*ans;text=`${a} sparkle gems are shared equally among ${b} friends. How many does each friend get?`;hint=`Share ${a} into ${b} equal groups.`;solve=`This is division. ${a} divided by ${b} equals ${ans}, because ${b} times ${ans} equals ${a}. Each friend gets ${ans}.`;}
+  if(type===4){a=20+stage*10+n*3;b=5+((n+2)%9);ans=a-b;text=`You have ${a} style coins and spend ${b}. How many remain?`;hint=`You started with ${a}. Spending means subtract ${b}.`;solve=`Start with ${a} style coins and take away the ${b} you spent. ${a} minus ${b} equals ${ans}. You have ${ans} left.`;}
   let wrong=[ans+2,Math.max(0,ans-2),ans+5];
   opts=[ans,...wrong].map(String).sort(()=>Math.random()-.5);
-  q.push({q:text,a:opts,correct:opts.indexOf(String(ans)),hint:"Try the operation carefully and check your work."});
+  q.push({id:`m-${stage}-${n}`,q:text,a:opts,correct:opts.indexOf(String(ans)),hint,solve});
  }
  return q;
 }
 function bankFor(stage,sec){
  if(sec===0)return mathSet(stage);
  let src=sec===1?readingSets[stage]:logicSets[stage];
- return src.map(x=>({q:x[0],a:x[1],correct:x[2],hint:"Read the clues carefully and eliminate answers that do not fit."}));
+ return src.map((x,n)=>({id:`${sec===1?"r":"l"}-${stage}-${n}`,q:x[0],a:x[1],correct:x[2],hint:sec===1?"Read the sentence again slowly and look for the words that give you the answer.":"Use the clues one at a time. Cross out choices that do not fit.",solve:sec===1?"":`Let's use the clues. ${x[0]} The choice that fits the clues best is: ${x[1][x[2]]}.`}));
 }
 function startSection(sec){
  currentSection=sec; state.currentSection=sec; state.currentQuestion=0; state.quizScore=0;
- currentQuestions=bankFor(currentStage,sec); currentAnswerLocked=false;
+ currentQuestions=bankFor(currentStage,sec); currentAnswerLocked=false; hintShownAt=null;solveUsedForCurrent=false;clearSolveTimer();
  document.getElementById("quizTitle").textContent=stages[currentStage].name;
  document.getElementById("sectionBadge").textContent=["➗ Math","📚 Reading","🧠 Logic / Problem Solving"][sec];
  renderQuestion();screen("quiz");
 }
+function clearSolveTimer(){if(solveTimerId){clearInterval(solveTimerId);solveTimerId=null;}}
+function updateSolveTimer(){
+ const btn=document.getElementById("solveBtn"),label=document.getElementById("solveTimer");
+ if(!btn||!label||!hintShownAt)return;
+ const remain=Math.max(0,SOLVE_DELAY_MS-(Date.now()-hintShownAt));
+ if(remain<=0){btn.disabled=false;btn.classList.remove("solveLocked");label.textContent="Show Me How is ready.";clearSolveTimer();return;}
+ const min=Math.floor(remain/60000),sec=Math.ceil((remain%60000)/1000);label.textContent=`Show Me How unlocks in ${min}:${String(sec).padStart(2,"0")}`;
+}
 function renderQuestion(){
  let i=state.currentQuestion,q=currentQuestions[i];
- document.getElementById("quizProgress").style.width=((i/10)*100)+"%";
- document.getElementById("question").textContent=`${i+1}. ${q.q}`;
+ clearSolveTimer();hintShownAt=null;solveUsedForCurrent=false;
+ const total=Math.max(10,currentQuestions.length);
+ document.getElementById("quizProgress").style.width=(Math.min((i+1)/total,1)*100)+"%";
+ document.getElementById("question").textContent=q.isRetry?`Practice Try: ${q.q}`:`${Math.min(i+1,10)}. ${q.q}`;
+ document.getElementById("retryBanner").classList.toggle("show",!!q.isRetry);
  let a=document.getElementById("answers");a.innerHTML="";currentAnswerLocked=false;
  q.a.forEach((t,idx)=>{let b=document.createElement("button");b.className="answer";b.textContent=t;b.onclick=()=>answer(idx,b);a.appendChild(b)});
  document.getElementById("feedback").textContent="";document.getElementById("nextBtn").style.display="none";
+ document.getElementById("hintPanel").classList.remove("show");document.getElementById("solutionPanel").classList.remove("show");
+ const helpBar=document.getElementById("helpBar"),hintBtn=document.getElementById("hintBtn"),solveBtn=document.getElementById("solveBtn"),timer=document.getElementById("solveTimer");
+ const helpEnabled=currentSection===0||currentSection===2;
+ helpBar.style.display=helpEnabled?"flex":"none";
+ hintBtn.disabled=false;solveBtn.disabled=true;solveBtn.classList.add("solveLocked");timer.textContent=helpEnabled?"Use a hint first. Show Me How becomes available 3 minutes later.":"";
+ if(state.autoSpeak)setTimeout(()=>readCurrentQuestion(),150);
+}
+function showHint(){
+ if(currentAnswerLocked)return;let q=currentQuestions[state.currentQuestion];
+ if(!hintShownAt){hintShownAt=Date.now();state.helpStats.hintsUsed++;state.helpLog.push({type:"hint",stage:currentStage,section:currentSection,question:q.id,time:new Date().toISOString()});save();solveTimerId=setInterval(updateSolveTimer,1000);}
+ document.getElementById("hintPanel").textContent=`💡 Hint: ${q.hint}`;document.getElementById("hintPanel").classList.add("show");updateSolveTimer();speakText(`Hint. ${q.hint}`);
+}
+function showSolution(){
+ if(currentAnswerLocked||!hintShownAt||Date.now()-hintShownAt<SOLVE_DELAY_MS)return;
+ let q=currentQuestions[state.currentQuestion];solveUsedForCurrent=true;state.helpStats.solvesUsed++;state.helpLog.push({type:"solve",stage:currentStage,section:currentSection,question:q.id,time:new Date().toISOString()});save();
+ document.getElementById("solutionPanel").textContent=`🧩 Let's solve it together: ${q.solve||(`The best answer is ${q.a[q.correct]}.`)}`;document.getElementById("solutionPanel").classList.add("show");speakText(q.solve||`The answer is ${q.a[q.correct]}.`);
+}
+function queueRetry(q){
+ const retry={...q,a:[...q.a],isRetry:true,retryOf:q.retryOf||q.id};
+ currentQuestions.push(retry);state.helpStats.retriesRequired++;
 }
 function answer(idx,btn){
- if(currentAnswerLocked)return;currentAnswerLocked=true;
+ if(currentAnswerLocked)return;currentAnswerLocked=true;clearSolveTimer();
  let q=currentQuestions[state.currentQuestion],buttons=[...document.querySelectorAll(".answer")];
- if(idx===q.correct){btn.classList.add("correct");state.quizScore++;state.points+=10;document.getElementById("feedback").textContent="✅ Correct! +10 Style Points";}
- else{btn.classList.add("wrong");buttons[q.correct].classList.add("correct");state.points+=3;document.getElementById("feedback").textContent="💡 Nice try. "+q.hint+" +3 effort points";}
+ const correct=idx===q.correct;
+ if(correct){
+   btn.classList.add("correct");
+   if(solveUsedForCurrent){queueRetry(q);document.getElementById("feedback").textContent="✅ That's the answer. Because we used Show Me How, this problem will come back at the end. Solve it on your own then to earn the points.";}
+   else{state.quizScore++;state.points+=10;if(q.isRetry){state.helpStats.retriesRecovered++;state.helpLog.push({type:"retry-success",stage:currentStage,section:currentSection,question:q.retryOf,time:new Date().toISOString()});document.getElementById("feedback").textContent="🌟 You solved it on your own this time! +10 Style Points";}else{document.getElementById("feedback").textContent="✅ Correct! +10 Style Points";}}
+ }else{
+   btn.classList.add("wrong");buttons[q.correct].classList.add("correct");state.points+=3;
+   if(q.isRetry||solveUsedForCurrent){queueRetry(q);document.getElementById("feedback").textContent=`💡 Nice try. ${q.hint} We'll practice this one again before the section ends. +3 effort points`;}
+   else{document.getElementById("feedback").textContent=`💡 Nice try. ${q.hint} +3 effort points`;}
+ }
  save();document.getElementById("nextBtn").style.display="inline-block";
 }
 function nextQuestion(){
- if(state.currentQuestion<9){state.currentQuestion++;renderQuestion();return;}
+ if(state.currentQuestion<currentQuestions.length-1){state.currentQuestion++;renderQuestion();return;}
  let wasDone=state.completed[currentStage][currentSection];
  if(!wasDone){state.completed[currentStage][currentSection]=true;state.scores[currentStage][currentSection]=state.quizScore;}
  else{state.scores[currentStage][currentSection]=Math.max(state.scores[currentStage][currentSection]||0,state.quizScore);}
  if(state.quizScore>=9)state.points+=25;
- save();
- showSectionTicket(currentStage,currentSection,state.quizScore);
+ save();showSectionTicket(currentStage,currentSection,state.quizScore);
 }
 function showSectionTicket(stage,sec,score){
  state.ticketReturn={stage,sec};
@@ -285,6 +355,8 @@ function showSectionTicket(stage,sec,score){
  document.getElementById("sectionTicketQuest").textContent=stages[stage].name;
  document.getElementById("sectionTicketSection").textContent=["Math","Reading","Logic / Problem Solving"][sec];
  document.getElementById("sectionTicketScore").textContent=score;
+ let logs=state.helpLog.filter(x=>x.stage===stage&&x.section===sec),hints=logs.filter(x=>x.type==="hint").length,solves=logs.filter(x=>x.type==="solve").length,recovered=logs.filter(x=>x.type==="retry-success").length;
+ document.getElementById("sectionTicketHelp").textContent=`${hints} hint${hints===1?"":"s"}, ${solves} Show Me How use${solves===1?"":"s"}, ${recovered} practice problem${recovered===1?"":"s"} solved independently`;
  document.getElementById("sectionTicketPrize").textContent=state.prizes[stage][sec]||"Prize";
  screen("sectionTicket");
 }
@@ -340,17 +412,18 @@ function openSettings(){
  stages.forEach((s,i)=>["Math","Reading","Logic / Problem Solving"].forEach((sec,j)=>{
   let row=document.createElement("div");row.className="settingsRow";row.innerHTML=`<strong>${s.name} — ${sec}</strong><input id="prize_${i}_${j}" value="${(state.prizes[i][j]||"").replace(/"/g,"&quot;")}">`;d.appendChild(row)
  }));
- document.getElementById("grandPrizeInput").value=state.grandPrize||"";screen("settings")
+ document.getElementById("grandPrizeInput").value=state.grandPrize||"";document.getElementById("autoSpeakInput").checked=state.autoSpeak!==false;
+ document.getElementById("helpSummary").innerHTML=`<strong>Learning Help Summary</strong><p>Hints used: ${state.helpStats.hintsUsed}<br>Show Me How used: ${state.helpStats.solvesUsed}<br>Practice retries earned back: ${state.helpStats.retriesRecovered}</p><p class="tiny">When Show Me How is used, the problem returns later. Points are awarded only when it is solved independently.</p>`;screen("settings")
 }
 function saveSettings(){
  state.name=document.getElementById("setName").value.trim()||"Fashion Star";
  stages.forEach((s,i)=>[0,1,2].forEach(j=>state.prizes[i][j]=document.getElementById(`prize_${i}_${j}`).value.trim()||"Prize"));
- state.grandPrize=document.getElementById("grandPrizeInput").value.trim()||"Grand Prize";save();goHome()
+ state.grandPrize=document.getElementById("grandPrizeInput").value.trim()||"Grand Prize";state.autoSpeak=document.getElementById("autoSpeakInput").checked;save();goHome()
 }
 function resetProgress(){
  if(!confirm("Reset all scores, earned glam pieces, and outfit choices? Prize settings and player name will be kept."))return;
- let name=state.name,prizes=state.prizes,grandPrize=state.grandPrize;
- state=JSON.parse(JSON.stringify(defaultState));state.name=name;state.prizes=prizes;state.grandPrize=grandPrize;save();goHome()
+ let name=state.name,prizes=state.prizes,grandPrize=state.grandPrize,autoSpeak=state.autoSpeak;
+ state=JSON.parse(JSON.stringify(defaultState));state.name=name;state.prizes=prizes;state.grandPrize=grandPrize;state.autoSpeak=autoSpeak;save();goHome()
 }
 load();
 </script>
