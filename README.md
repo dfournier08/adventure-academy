@@ -1,64 +1,36 @@
-# Adventure Academy v0.1
+# Adventure Academy v0.2
 
-This is the first modular scaffold for the learning platform.
+Adventure Academy is a modular learning platform built around short digital worlds, rewards, creativity, problem solving, and real-world family projects.
 
-## What is included
+## v0.2 additions
 
-- Adventure Hub / world map
-- Player profile
-- Local progress storage
-- Unlock engine
-- Badge display
-- Grown-up settings
-- Testing unlock control
-- Glam Quest v2 linked as World 1
-- Preview modules for:
-  - Leadership Academy
-  - Detective Academy
-  - Code Quest
-  - Science Lab
-  - Business Boulevard
-  - Inventor Lab
-  - Grandpa's Workshop
-- Firebase Hosting configuration scaffold
-- Firebase JavaScript integration placeholder
+- Added Grandma's Creative Workshop
+- Added Family Super Challenges
+- Expanded Grandpa's Workshop preview
+- Added workshop and world category tags to the Adventure Hub
+- Added unlock support for completing multiple prerequisite worlds
+- Expanded the badge case from 8 to 10 worlds
+- Updated the roadmap and progression plan
 
-## Run locally
+## Current worlds
 
-Because the project uses ES modules, the most reliable way to test locally is with a small local web server.
+1. Glam Quest
+2. Leadership Academy
+3. Detective Academy
+4. Code Quest
+5. Science Lab
+6. Business Boulevard
+7. Inventor Lab
+8. Grandpa's Workshop
+9. Grandma's Creative Workshop
+10. Family Super Challenges
 
-### Python
-From this folder:
+## Real-world workshop philosophy
 
-python -m http.server 8000
+Grandpa's Workshop emphasizes Build It, Fix It, and Invent It.
+Grandma's Workshop emphasizes Craft It, Make It, Cook It, Grow It, Give It, and Reuse It.
+Family Super Challenges combine multiple Academy skills into larger projects for Grandma, Grandpa, and the learner to complete together.
 
-Then open:
+## Important deployment note
 
-http://localhost:8000
-
-### VS Code
-The Live Server extension also works well.
-
-## Firebase Hosting
-
-1. Create a Firebase project.
-2. Install the Firebase CLI.
-3. Sign in:
-   firebase login
-4. Copy `.firebaserc.example` to `.firebaserc`.
-5. Replace `YOUR_FIREBASE_PROJECT_ID`.
-6. Deploy:
-   firebase deploy --only hosting
-
-## Planned next development steps
-
-1. Fully integrate Glam Quest v2 with the shared Adventure Academy profile.
-2. Build Code Quest Level 1 as the second true playable world.
-3. Add Firestore cloud sync.
-4. Add Firebase Authentication, probably anonymous/player-code based first.
-5. Add prize management and Grandpa project management to grown-up settings.
-6. Add automatic GitHub-to-Firebase deployment after the repository is created.
-
-## Important
-
-Firebase credentials and project identifiers are intentionally not included yet.
+This v0.2 update intentionally does not include `.firebaserc` or replace your Firebase project association. Apply the update to your existing Adventure_Academy repository, test locally, commit to GitHub, and deploy to the existing Firebase Hosting project.

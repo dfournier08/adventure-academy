@@ -1,14 +1,22 @@
 {
-  "version": "0.1",
+  "version": "0.2",
   "firstPlayableWorld": "glam",
   "nextPlayableWorld": "code",
+  "worldCount": 10,
   "unlockPlan": {
-    "leadership": "1 Glam piece",
-    "detective": "2 Glam pieces",
-    "code": "3 Glam pieces",
+    "leadership": "Earn 1 Glam piece",
+    "detective": "Earn 2 Glam pieces",
+    "code": "Earn 3 Glam pieces",
     "science": "Complete Detective Academy",
     "business": "Complete Leadership Academy",
     "inventor": "Complete Code Quest",
-    "grandpa": "Earn any 3 world badges"
+    "grandpa": "Earn any 3 world badges",
+    "grandma": "Earn any 3 world badges",
+    "family": "Complete both Grandma's and Grandpa's Workshops"
+  },
+  "realWorldTracks": {
+    "grandpa": ["Build It", "Fix It", "Invent It"],
+    "grandma": ["Craft It", "Make It", "Cook It", "Grow It", "Give It", "Reuse It"],
+    "family": ["Engineering", "Creative Design", "Science", "Budgeting", "Reflection"]
   }
 }

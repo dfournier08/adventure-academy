@@ -33,6 +33,7 @@ function renderWorlds(){
     card.innerHTML = `
       <div>
         <div class="world-icon">${world.icon}</div>
+        <div class="world-tag">${world.category || "ADVENTURE WORLD"}</div>
         <h3>${world.name}</h3>
         <strong>${world.skill}</strong>
         <p>${world.description}</p>
