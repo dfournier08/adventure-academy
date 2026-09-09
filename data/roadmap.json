@@ -1,0 +1,14 @@
+{
+  "version": "0.1",
+  "firstPlayableWorld": "glam",
+  "nextPlayableWorld": "code",
+  "unlockPlan": {
+    "leadership": "1 Glam piece",
+    "detective": "2 Glam pieces",
+    "code": "3 Glam pieces",
+    "science": "Complete Detective Academy",
+    "business": "Complete Leadership Academy",
+    "inventor": "Complete Code Quest",
+    "grandpa": "Earn any 3 world badges"
+  }
+}

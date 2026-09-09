@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glam Quest Academy</title>
+<style>
+:root{--pink:#ff5dbd;--purple:#8b5cf6;--blue:#59c8ff;--gold:#ffd65a;--ink:#34254a;--good:#35c978;--bad:#ff6f75;--panel:#ffffffee}
+*{box-sizing:border-box} body{margin:0;min-height:100vh;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:radial-gradient(circle at 12% 10%,#ffd9ee 0 16%,transparent 34%),radial-gradient(circle at 90% 16%,#ddd4ff 0 16%,transparent 33%),linear-gradient(135deg,#fff7fb,#eaf8ff)}
+button,input{font:inherit}.wrap{max-width:1180px;margin:auto;padding:18px}.top{display:flex;gap:12px;justify-content:space-between;align-items:center;flex-wrap:wrap;margin-bottom:14px}.brand{font-size:clamp(26px,4vw,44px);font-weight:900}.stats{display:flex;gap:8px;flex-wrap:wrap}.pill{background:white;border:3px solid #eadcff;border-radius:999px;padding:9px 13px;font-weight:900;box-shadow:0 5px 0 #d9c9f7}.screen{display:none;background:var(--panel);padding:24px;border-radius:28px;box-shadow:0 18px 45px #5b3f7d28;border:4px solid #fff}.screen.active{display:block}h1,h2,h3{margin-top:0}.btn{border:0;border-radius:17px;padding:13px 20px;font-weight:900;cursor:pointer;color:#fff;background:linear-gradient(135deg,var(--pink),var(--purple));box-shadow:0 6px 0 #6740b5}.btn.secondary{background:linear-gradient(135deg,#64d3ff,#478dff);box-shadow:0 6px 0 #316dcc}.btn.good{background:linear-gradient(135deg,#4cdb91,#29b66e);box-shadow:0 6px 0 #1f8d58}.btn.gray{background:linear-gradient(135deg,#9aa1ac,#6e7580);box-shadow:0 6px 0 #555b64}.btn:disabled{opacity:.45;cursor:not-allowed}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}.card{background:#fff;border:3px solid #eadcff;border-radius:22px;padding:18px;box-shadow:0 9px 20px #4e36731c}.locked{opacity:.48}.stageCard:nth-child(1){background:#ffe3f2}.stageCard:nth-child(2){background:#e9e0ff}.stageCard:nth-child(3){background:#e2f6ff}.stageCard:nth-child(4){background:#fff2bd}.stageCard:nth-child(5){background:#e4f9e7}.progress{height:18px;background:#ede7f7;border-radius:999px;overflow:hidden;margin:14px 0}.progress>div{height:100%;background:linear-gradient(90deg,var(--pink),var(--purple),var(--blue));width:0;transition:.25s}.question{font-size:clamp(23px,3.5vw,36px);font-weight:900;margin:18px 0}.answers{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}.answer{background:white;border:3px solid #e4daf5;border-radius:17px;padding:16px;font-weight:800;text-align:left;cursor:pointer}.answer.correct{background:#ddf8e9;border-color:var(--good)}.answer.wrong{background:#ffe3e5;border-color:var(--bad)}.feedback{min-height:48px;margin-top:14px;font-size:18px;font-weight:800}.choiceGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px}.choice{border:4px solid #eadcff;border-radius:20px;background:white;padding:16px;cursor:pointer;text-align:center}.choice.selected{border-color:var(--pink);box-shadow:0 0 0 5px #ff5dbd28}.swatch{height:92px;border-radius:16px;margin-bottom:10px;border:3px solid #6a587d}.closet{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}.closetItem{background:#faf7ff;border:2px solid #e8def6;border-radius:16px;padding:12px;text-align:center}.avatar{width:260px;height:360px;margin:10px auto;position:relative;filter:drop-shadow(0 14px 12px #51386e33)}.part{position:absolute;border:4px solid #5c4d72}.head{width:116px;height:104px;left:72px;top:30px;background:#f0c5a1;border-radius:18px;z-index:3}.hair{width:126px;height:58px;left:67px;top:20px;background:#5b3e31;border-radius:28px 28px 12px 12px;z-index:5}.hair:after{content:"";position:absolute;left:18px;right:18px;bottom:-22px;height:28px;background:inherit;border-radius:0 0 18px 18px}.topPart{width:126px;height:112px;left:67px;top:134px;background:#ff5dbd;border-radius:15px;z-index:2}.bottomPart{width:126px;height:72px;left:67px;top:235px;background:#8ed9ff;border-radius:12px;z-index:1}.shoe{width:55px;height:34px;top:310px;background:#8b5cf6;border-radius:10px}.shoe.l{left:62px}.shoe.r{right:62px}.arm{width:34px;height:104px;top:143px;background:#f0c5a1;border-radius:12px;z-index:1}.arm.l{left:26px;transform:rotate(5deg)}.arm.r{right:26px;transform:rotate(-5deg)}.eye{position:absolute;width:10px;height:10px;background:#33283f;border-radius:50%;top:74px;z-index:6}.eye.l{left:105px}.eye.r{left:145px}.smile{position:absolute;width:38px;height:17px;border-bottom:5px solid #ba6077;border-radius:50%;top:91px;left:111px;z-index:6}.accessory{position:absolute;z-index:8}.ticket{border:4px dashed var(--purple);border-radius:24px;background:#fff;padding:24px;max-width:760px;margin:16px auto}.big{font-size:32px;font-weight:900;color:var(--purple)}.ticketLayout{display:grid;grid-template-columns:280px 1fr;gap:18px;align-items:center}.settingsRow{display:grid;grid-template-columns:220px 1fr;gap:10px;margin:10px 0;align-items:center}.settingsRow input{padding:10px;border:2px solid #d9cdec;border-radius:10px;width:100%}.tiny{font-size:13px;opacity:.72}.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 18px}.sectionBadge{display:inline-block;padding:7px 12px;border-radius:999px;background:#f0e8ff;font-weight:900}.prizeBanner{background:linear-gradient(135deg,#fff1b8,#ffe0f0);border:3px solid #ffd16a;border-radius:18px;padding:14px;margin:14px 0;font-weight:800}
+@media(max-width:720px){.ticketLayout{grid-template-columns:1fr}.settingsRow{grid-template-columns:1fr}.avatar{transform:scale(.9);transform-origin:top center}}
+@media print{body *{visibility:hidden}.printable,.printable *{visibility:visible}.printable{position:absolute!important;left:0;top:0;width:100%;display:block!important;box-shadow:none!important;border:none!important}.noPrint{display:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div class="brand">✨ Glam Quest Academy</div>
+    <div class="stats">
+      <div class="pill">⭐ <span id="points">0</span> pts</div>
+      <div class="pill">👗 <span id="earnedCount">0</span>/5 glam pieces</div>
+      <button class="btn gray noPrint" onclick="openSettings()">⚙ Prize Settings</button>
+    </div>
+  </div>
+
+  <section id="home" class="screen active">
+    <h2>Welcome, <span id="playerNameHome">Fashion Star</span>!</h2>
+    <p>Each glam piece has <strong>3 learning sections</strong>: Math, Reading, and Logic / Problem Solving. Each section has <strong>10 challenges</strong>.</p>
+    <div class="prizeBanner">🎟 Finish each section to earn a prize ticket. Complete all three sections to unlock a glam item. Finish all five glam items to unlock the Grand Prize Ticket.</div>
+    <div class="toolbar">
+      <button class="btn" onclick="showMap()">Start / Continue Quest</button>
+      <button class="btn secondary" onclick="openCloset()">My Closet</button>
+    </div>
+    <p class="tiny">Progress, outfit choices, player name, and prize settings are saved on this device.</p>
+  </section>
+
+  <section id="map" class="screen">
+    <div class="toolbar"><button class="btn secondary" onclick="goHome()">← Home</button><button class="btn" onclick="openCloset()">My Closet</button></div>
+    <h2>Glam Quest Map</h2>
+    <div id="stageGrid" class="grid"></div>
+  </section>
+
+  <section id="stage" class="screen">
+    <div class="toolbar"><button class="btn secondary" onclick="showMap()">← Quest Map</button></div>
+    <h2 id="stageTitle"></h2>
+    <p id="stageDesc"></p>
+    <div id="sectionGrid" class="grid"></div>
+  </section>
+
+  <section id="quiz" class="screen">
+    <div class="toolbar"><button class="btn secondary" onclick="openStage(currentStage)">← Back</button></div>
+    <span id="sectionBadge" class="sectionBadge"></span>
+    <h2 id="quizTitle"></h2>
+    <div class="progress"><div id="quizProgress"></div></div>
+    <div id="question" class="question"></div>
+    <div id="answers" class="answers"></div>
+    <div id="feedback" class="feedback"></div>
+    <button id="nextBtn" class="btn good" style="display:none" onclick="nextQuestion()">Next →</button>
+  </section>
+
+  <section id="earn" class="screen">
+    <h2>🎉 Glam Piece Unlocked!</h2>
+    <p id="earnText"></p>
+    <div id="choiceGrid" class="choiceGrid"></div>
+    <div class="toolbar"><button id="saveChoiceBtn" class="btn good" onclick="saveEarnedChoice()" disabled>Save to My Closet</button></div>
+  </section>
+
+  <section id="closet" class="screen">
+    <div class="toolbar"><button class="btn secondary" onclick="showMap()">← Quest Map</button></div>
+    <h2>My Closet & Final Glam Builder</h2>
+    <p>Change any earned item whenever you want. Your selections are saved for the final runway and Grand Prize Ticket.</p>
+    <div class="ticketLayout">
+      <div><div id="closetAvatar"></div></div>
+      <div><div id="closetControls"></div></div>
+    </div>
+    <div class="toolbar"><button id="runwayBtn" class="btn" onclick="showRunway()">Final Runway</button></div>
+  </section>
+
+  <section id="runway" class="screen">
+    <h2>🌟 Final Glam Runway</h2>
+    <div id="runwayAvatar"></div>
+    <h3><span id="runwayName"></span>'s final look</h3>
+    <p>You earned all five glam pieces and completed the full quest.</p>
+    <div class="toolbar"><button class="btn" onclick="showGrandTicket()">Open Grand Prize Ticket 🎟</button><button class="btn secondary" onclick="openCloset()">Edit Outfit</button></div>
+  </section>
+
+  <section id="sectionTicket" class="screen printable">
+    <div class="ticket">
+      <div class="big">🎟 Glam Quest Prize Ticket</div>
+      <h2 id="sectionTicketTitle"></h2>
+      <p><strong>Player:</strong> <span id="sectionTicketName"></span></p>
+      <p><strong>Quest:</strong> <span id="sectionTicketQuest"></span></p>
+      <p><strong>Section:</strong> <span id="sectionTicketSection"></span></p>
+      <p><strong>Score:</strong> <span id="sectionTicketScore"></span>/10</p>
+      <p><strong>Prize:</strong> <span id="sectionTicketPrize"></span></p>
+      <p><strong>Grandma / Grandpa Approval:</strong> ______________________________</p>
+      <p class="tiny">Great work — keep going to unlock the next glam piece.</p>
+    </div>
+    <div class="toolbar noPrint"><button class="btn" onclick="window.print()">Print Ticket</button><button class="btn good" onclick="continueAfterTicket()">Continue Quest</button></div>
+  </section>
+
+  <section id="grandTicket" class="screen printable">
+    <div class="ticket">
+      <div class="big">🏆 GRAND PRIZE GLAM TICKET</div>
+      <div class="ticketLayout">
+        <div id="ticketAvatar"></div>
+        <div>
+          <h2><span id="grandName"></span> completed Glam Quest Academy!</h2>
+          <p><strong>Total Style Points:</strong> <span id="grandPoints"></span></p>
+          <p><strong>Grand Prize:</strong> <span id="grandPrizeText"></span></p>
+          <p><strong>Grandma / Grandpa Approval:</strong><br><br>__________________________________</p>
+          <p class="tiny">All 15 learning sections completed and all 5 glam pieces earned.</p>
+        </div>
+      </div>
+    </div>
+    <div class="toolbar noPrint"><button class="btn" onclick="window.print()">Print Grand Prize Ticket</button><button class="btn secondary" onclick="openCloset()">Back to Closet</button></div>
+  </section>
+
+  <section id="settings" class="screen">
+    <div class="toolbar"><button class="btn secondary" onclick="goHome()">← Home</button></div>
+    <h2>⚙ Prize & Player Settings</h2>
+    <p>You can change these anytime. They are saved locally on this device.</p>
+    <div class="settingsRow"><strong>Player name</strong><input id="setName"></div>
+    <div id="prizeSettings"></div>
+    <div class="settingsRow"><strong>Grand Prize</strong><input id="grandPrizeInput"></div>
+    <div class="toolbar"><button class="btn good" onclick="saveSettings()">Save Settings</button><button class="btn gray" onclick="resetProgress()">Reset Game Progress</button></div>
+  </section>
+</div>
+
+<script>
+const readingSets = [[["Lena packed an umbrella before walking to school because dark clouds filled the sky. Why did she bring the umbrella?", ["She expected rain", "She wanted shade indoors", "She lost her backpack", "She was going swimming"], 0], ["Which word means almost the same as 'tiny'?", ["Huge", "Small", "Loud", "Fast"], 1], ["Maya finished her homework before turning on her game. What happened first?", ["She played the game", "She finished homework", "She went to bed", "She ate breakfast"], 1], ["The puppy dashed across the yard. What does 'dashed' mean?", ["Moved quickly", "Slept quietly", "Ate slowly", "Sat still"], 0], ["Nora put the ice cream in the freezer. Why?", ["To keep it cold", "To make it louder", "To dry it", "To make it heavier"], 0], ["Which sentence is a question?", ["The cat is soft.", "Where is my hat?", "I found a coin.", "Please close the door."], 1], ["Sam whispered in the library. Why was whispering a good choice?", ["Libraries are usually quiet", "He wanted everyone to hear", "He was outside", "He was singing"], 0], ["Choose the best title: 'Bees visit flowers and carry pollen from one flower to another.'", ["How Bees Help Flowers", "Why Dogs Bark", "Rainy Days", "A Trip to the Moon"], 0], ["What is the opposite of 'early'?", ["Late", "Fast", "Near", "Warm"], 0], ["Ava read the directions before starting the craft. Why?", ["To know what to do", "To make the paper wet", "To skip the craft", "To lose the glue"], 0]], [["Kai saved part of his allowance each week so he could buy a new book. What does this show?", ["Planning ahead", "Forgetting things", "Being late", "Giving up"], 0], ["Which word best completes: 'The soup was so ___ that I waited before taking a bite.'", ["hot", "square", "quiet", "tiny"], 0], ["Emma saw a trail of muddy paw prints leading to the couch. What can she infer?", ["A pet probably walked there", "It snowed inside", "The couch can talk", "The lights are broken"], 0], ["What is the main idea? 'Plants need sunlight, water, and air to grow well.'", ["What plants need to grow", "How to bake bread", "Why cars move", "How birds fly"], 0], ["Which word means the same as 'begin'?", ["Start", "Finish", "Hide", "Drop"], 0], ["Jordan wore boots because the sidewalk was covered in puddles. What caused Jordan to wear boots?", ["The puddles", "The sunshine", "A birthday", "A movie"], 0], ["Choose the sentence with the clearest order.", ["First wash your hands, then eat.", "Eat first, yesterday hands.", "Hands then maybe first.", "Wash after before eat."], 0], ["If a character 'grinned,' what did the character most likely do?", ["Smiled", "Cried", "Slept", "Ran"], 0], ["Which detail best supports the idea that it was cold outside?", ["Their breath looked like little clouds", "The grass was green", "A bird sang", "The sun was bright"], 0], ["Tara checked the clock twice before leaving. What was she probably concerned about?", ["Being on time", "Choosing a snack", "Finding a pencil", "Painting a picture"], 0]], [["Ben tried one idea, saw it did not work, and tried a different one. What skill is he using?", ["Problem solving", "Sleeping", "Guessing once", "Ignoring the problem"], 0], ["Which word is closest in meaning to 'careful'?", ["Cautious", "Wild", "Noisy", "Hungry"], 0], ["A sign says 'Wet Paint.' What is the smartest thing to do?", ["Avoid touching it", "Lean on it", "Rub it", "Cover it with paper"], 0], ["Mila reread a hard paragraph. Why might that help?", ["To understand it better", "To make the book heavier", "To change the words", "To skip the story"], 0], ["What is the main idea? 'Recycling turns used materials into new products and can reduce trash.'", ["Why recycling helps", "How to play soccer", "Why stars shine", "How to make soup"], 0], ["Which detail shows that Theo was excited?", ["He bounced on his toes and smiled", "He yawned and closed his eyes", "He whispered 'I'm bored'", "He put his head down"], 0], ["If 'fragile' is printed on a box, how should you handle it?", ["Carefully", "Roughly", "Throw it", "Stand on it"], 0], ["Choose the best conclusion: 'The power went out, and every lamp became dark.'", ["The lamps need electricity", "The lamps are broken forever", "It became daytime", "The room moved"], 0], ["Which sentence gives a reason?", ["I wore a coat because it was cold.", "The coat is blue.", "Put on your coat.", "Where is the coat?"], 0], ["Riley made a list before shopping. What benefit would a list provide?", ["Help remember needed items", "Make the store close", "Change the prices", "Make the cart faster"], 0]], [["A recipe says to bake for 20 minutes, but Mia checks it after only 5. What should she do?", ["Wait longer", "Throw it away", "Turn off the oven forever", "Add ice"], 0], ["Which word means almost the same as 'select'?", ["Choose", "Drop", "Break", "Hide"], 0], ["The class voted and most students chose the science museum. What does 'most' mean?", ["More than half", "Exactly one", "None", "Only the teacher"], 0], ["What is the best summary? 'Owls hunt mostly at night. Their eyes and hearing help them find prey in darkness.'", ["Owls are well suited for hunting at night", "Owls only eat plants", "Owls cannot see", "Owls sleep all night"], 0], ["If someone is 'patient,' what are they good at doing?", ["Waiting calmly", "Running fastest", "Speaking loudest", "Eating quickly"], 0], ["A map key shows a blue line means river. You see a blue line across the map. What is it?", ["A river", "A road", "A school", "A mountain"], 0], ["Which statement is an opinion?", ["Chocolate ice cream is the best flavor", "Water freezes when cold enough", "A week has seven days", "Dogs are mammals"], 0], ["Why do instructions often use numbered steps?", ["To show the correct order", "To make them harder", "To hide information", "To change the topic"], 0], ["A character keeps practicing after making mistakes. Which trait fits best?", ["Persistent", "Careless", "Lazy", "Confused"], 0], ["Which sentence best predicts what happens next? 'The sky darkened, thunder rumbled, and wind picked up.'", ["A storm may begin", "It will snow inside", "The sun will get brighter instantly", "Everyone will go swimming"], 0]], [["Ava notices two clues point to the same answer. What should she do?", ["Use both clues to support her choice", "Ignore both clues", "Pick randomly", "Stop reading"], 0], ["Which word means the opposite of 'include'?", ["Exclude", "Add", "Join", "Collect"], 0], ["What is the author's purpose in a set of game instructions?", ["To explain how to play", "To tell a fairy tale", "To sell a car", "To describe a pet"], 0], ["A paragraph compares bicycles and scooters. Which text structure is being used?", ["Compare and contrast", "Cause and effect only", "Sequence only", "Question and answer only"], 0], ["If an answer seems wrong, what is a strong next step?", ["Check the evidence again", "Erase the whole page", "Guess faster", "Ignore the question"], 0], ["A headline says 'School Garden Produces 200 Pounds of Vegetables.' What is the article likely about?", ["The success of a school garden", "A basketball game", "A space launch", "A new video game"], 0], ["Which detail is most relevant to choosing shoes for hiking?", ["They have good grip", "They come in a fancy box", "The store has music", "The laces are long"], 0], ["What is a synonym for 'solution'?", ["Answer", "Problem", "Question", "Mistake"], 0], ["If two sources give different facts, what should you do?", ["Check which source is more reliable", "Believe the first one automatically", "Ignore both", "Pick the funnier one"], 0], ["A character gives up a turn so a younger child can play. Which trait does that show?", ["Kindness", "Jealousy", "Carelessness", "Fear"], 0]]];
+const logicSets = [[["What comes next? 3, 6, 9, 12, ___", ["13", "14", "15", "18"], 2], ["Ava is taller than Mia. Mia is taller than Zoe. Who is shortest?", ["Ava", "Mia", "Zoe", "Cannot know"], 2], ["You have 3 red blocks, 3 blue blocks, and 3 green blocks. How many blocks total?", ["6", "9", "12", "3"], 1], ["Which item does not belong?", ["Spoon", "Fork", "Plate", "Shoe"], 3], ["If all glims are shiny and this object is a glim, what must be true?", ["It is shiny", "It is heavy", "It is blue", "It can fly"], 0], ["You need to carry water without spilling it. Which tool is best?", ["Cup", "Fork", "Paper towel", "Pencil"], 0], ["Pattern: circle, square, circle, square, ___", ["Triangle", "Circle", "Star", "Heart"], 1], ["You have to be at school by 8:00. It takes 20 minutes to get there. What is a smart plan?", ["Leave before 7:40", "Leave at 8:05", "Wait until 8:00 to pack", "Ignore the clock"], 0], ["A tower keeps falling because the bottom is narrow. What change is most likely to help?", ["Make the base wider", "Make the top heavier", "Push it sideways", "Use fewer bottom blocks"], 0], ["Which number is missing? 5, 10, 15, __, 25", ["18", "20", "22", "30"], 1]], [["You have $12. You want a $7 book and a $4 pen set. Can you buy both?", ["Yes, with $1 left", "No, short $1", "Yes, with $5 left", "No, short $5"], 0], ["If you turn left, then left again, then left again, which turn gets you back facing the starting direction?", ["One more left", "One right", "No turn", "Two rights"], 0], ["Which comes first when making toast?", ["Put bread in toaster", "Spread butter after it pops", "Eat the toast", "Wash the plate after"], 0], ["A bag has only red and blue marbles. You pull out a green marble. What does that tell you?", ["The information was wrong", "Green is the same as blue", "The bag is empty", "Nothing"], 0], ["Which number is odd?", ["14", "22", "31", "48"], 2], ["You have 20 minutes and two tasks that take 8 and 7 minutes. Is there enough time?", ["Yes, 5 minutes left", "No, need 5 more", "Exactly enough", "Cannot know"], 0], ["Which shape has no corners?", ["Circle", "Square", "Triangle", "Rectangle"], 0], ["If every zorp has wings, and Lumo has no wings, can Lumo be a zorp?", ["No", "Yes", "Always", "Only on Tuesday"], 0], ["Pattern: 1, 2, 4, 8, ___", ["10", "12", "16", "18"], 2], ["You are choosing a route. Route A is 4 blocks. Route B is 7 blocks. Which is shorter?", ["Route A", "Route B", "Same", "Cannot tell"], 0]], [["A recipe needs 2 eggs per batch. How many eggs for 3 batches?", ["4", "5", "6", "8"], 2], ["The red key opens the red box. The blue key opens the blue box. Which key opens the red box?", ["Red", "Blue", "Both", "Neither"], 0], ["If today is Wednesday, what day is two days later?", ["Thursday", "Friday", "Saturday", "Monday"], 1], ["Which is the best first step when a device does not turn on?", ["Check the power", "Throw it away", "Hit it", "Buy another immediately"], 0], ["A code repeats A-B-C-A-B-C. What comes next?", ["A", "B", "C", "D"], 0], ["There are 4 tables with 3 chairs each. How many chairs?", ["7", "10", "12", "14"], 2], ["You have one flashlight and the room is dark. What problem does the flashlight solve?", ["It helps you see", "It makes food cold", "It tells time", "It unlocks doors"], 0], ["Which is most useful for measuring the length of a desk?", ["Ruler", "Thermometer", "Clock", "Cup"], 0], ["If a train leaves at 2:00 and the trip takes 1 hour, when does it arrive?", ["2:30", "3:00", "4:00", "1:00"], 1], ["You try a puzzle piece and it does not fit. What is a smart next move?", ["Try a different piece", "Force it until it breaks", "Quit immediately", "Hide the puzzle"], 0]], [["A jar holds 24 beads. You use 6. How many remain?", ["16", "18", "20", "30"], 1], ["Which plan is safest for crossing a street?", ["Use a crosswalk and look both ways", "Run without looking", "Follow a ball into the road", "Cross between parked cars"], 0], ["If 2 pencils cost $4, what is the cost of 1 pencil?", ["$1", "$2", "$3", "$4"], 1], ["A clock says 3:30. Which phrase matches?", ["Half past three", "Quarter past three", "Half past four", "Three o'clock"], 0], ["Which pattern rule fits 2, 5, 8, 11?", ["Add 3", "Add 2", "Double", "Subtract 3"], 0], ["A box is labeled 'Books Only.' Which item belongs?", ["Novel", "Shoe", "Apple", "Toy car"], 0], ["You have 15 stickers and give 5 each to two friends. How many are left?", ["0", "5", "10", "15"], 1], ["Which tool helps you find north?", ["Compass", "Thermometer", "Scale", "Calculator"], 0], ["If the first bus is full, what is a reasonable backup plan?", ["Wait for the next bus", "Stand in the road", "Walk into traffic", "Ignore where you need to go"], 0], ["Three clues all point to the same answer. What does that usually do?", ["Makes the answer stronger", "Makes the answer impossible", "Means clues do not matter", "Proves the opposite"], 0]], [["A store offers 3 shirts for $15. What is the average cost per shirt?", ["$3", "$5", "$10", "$15"], 1], ["Which piece of information matters most when choosing an umbrella?", ["Whether it keeps rain off", "The box color", "The cashier's shoes", "The music in the store"], 0], ["A puzzle says exactly one door is safe. Door A is not safe, Door B is safe. Which should you choose?", ["Door B", "Door A", "Both", "Neither"], 0], ["If 5 machines each make 2 parts, how many parts are made total?", ["7", "10", "12", "25"], 1], ["Which step should happen last when sending a letter?", ["Put it in the mailbox", "Write the message", "Address the envelope", "Put the letter in the envelope"], 0], ["A battery-powered toy stops working. The batteries are dead. What is the most direct fix?", ["Replace or recharge the batteries", "Paint the toy", "Change its name", "Put it in a drawer"], 0], ["Pattern: 20, 18, 16, 14, ___", ["13", "12", "10", "8"], 1], ["You have 30 minutes before leaving. Shower takes 10 minutes and packing takes 15. Is there time for both?", ["Yes, 5 minutes left", "No, short 5", "Exactly 30 each", "Cannot know"], 0], ["A rule says 'If it rains, practice moves indoors.' It is raining. Where should practice be?", ["Indoors", "Outside", "Canceled automatically", "At the store"], 0], ["What is the strongest way to solve a hard problem?", ["Break it into smaller parts", "Guess once", "Avoid it forever", "Rush"], 0]]];
+
+const stages=[
+  {name:"Hair Studio",icon:"💇",piece:"Hair",desc:"Complete Math, Reading, and Logic to unlock a hairstyle."},
+  {name:"Outfit Studio",icon:"👗",piece:"Top / Dress",desc:"Complete three fresh learning sections to unlock a top or dress."},
+  {name:"Bottoms Boutique",icon:"🩳",piece:"Bottom",desc:"Complete another round of learning challenges to unlock a bottom."},
+  {name:"Shoe Shop",icon:"👟",piece:"Shoes",desc:"Complete three more sections to unlock shoes."},
+  {name:"Accessory Bar",icon:"💎",piece:"Accessory",desc:"Finish the final three sections to unlock an accessory and the Grand Prize."}
+];
+
+const glamChoices=[
+  [
+    {name:"Pink Waves",color:"#ff74c8",style:"waves"},
+    {name:"Purple Bob",color:"#a873ff",style:"bob"},
+    {name:"Golden Pony",color:"#f0bd55",style:"pony"},
+    {name:"Midnight Glam",color:"#453255",style:"long"}
+  ],
+  [
+    {name:"Sparkle Pink",color:"#ff5dbd"},
+    {name:"Royal Purple",color:"#8b5cf6"},
+    {name:"Sky Pop",color:"#55c9ff"},
+    {name:"Golden Star",color:"#ffd65a"}
+  ],
+  [
+    {name:"Denim Blue",color:"#6eaef5"},
+    {name:"Lavender",color:"#b49cff"},
+    {name:"Pink Pop",color:"#ff9ad2"},
+    {name:"Mint Glam",color:"#79dcb1"}
+  ],
+  [
+    {name:"Purple High-Tops",color:"#8b5cf6"},
+    {name:"Pink Boots",color:"#ff6dbf"},
+    {name:"Blue Sneakers",color:"#59c8ff"},
+    {name:"Gold Shoes",color:"#e7b841"}
+  ],
+  [
+    {name:"Star Crown",color:"#ffd65a",kind:"crown"},
+    {name:"Heart Glasses",color:"#ff5dbd",kind:"glasses"},
+    {name:"Purple Bow",color:"#9d6cff",kind:"bow"},
+    {name:"Blue Gem",color:"#55c9ff",kind:"gem"}
+  ]
+];
+
+let defaultState={
+ name:"Fashion Star",points:0,
+ completed:Array.from({length:5},()=>[false,false,false]),
+ scores:Array.from({length:5},()=>[null,null,null]),
+ earned:[false,false,false,false,false],
+ choices:[null,null,null,null,null],
+ prizes:Array.from({length:5},(_,i)=>["Small Prize","Small Prize","Small Prize"]),
+ grandPrize:"Grand Prize",
+ currentStage:0,currentSection:0,currentQuestion:0,quizScore:0,
+ ticketReturn:null
+};
+let state=JSON.parse(JSON.stringify(defaultState));
+let currentStage=0,currentSection=0,currentQuestions=[],currentAnswerLocked=false,pendingChoice=null;
+
+function load(){
+ const s=localStorage.getItem("glamQuestV2");
+ if(s){try{state=Object.assign(JSON.parse(JSON.stringify(defaultState)),JSON.parse(s));}catch(e){}}
+ if(!state.prizes||state.prizes.length!==5) state.prizes=JSON.parse(JSON.stringify(defaultState.prizes));
+ updateStats();
+}
+function save(){localStorage.setItem("glamQuestV2",JSON.stringify(state));updateStats();}
+function screen(id){document.querySelectorAll(".screen").forEach(x=>x.classList.remove("active"));document.getElementById(id).classList.add("active");window.scrollTo(0,0)}
+function updateStats(){document.getElementById("points").textContent=state.points;document.getElementById("earnedCount").textContent=state.earned.filter(Boolean).length;document.getElementById("playerNameHome").textContent=state.name}
+function goHome(){updateStats();screen("home")}
+function showMap(){renderMap();screen("map")}
+function renderMap(){
+ let g=document.getElementById("stageGrid");g.innerHTML="";
+ stages.forEach((s,i)=>{
+  let unlocked=i===0||state.earned[i-1]||state.earned[i];
+  let done=state.earned[i];
+  let c=document.createElement("div");c.className="card stageCard"+(unlocked?"":" locked");
+  c.innerHTML=`<h3>${s.icon} ${s.name}</h3><p>${s.desc}</p><p><strong>${done?"✅ Glam earned":unlocked?"🔓 Ready":"🔒 Locked"}</strong></p><button class="btn secondary" ${unlocked?"":"disabled"} onclick="openStage(${i})">${done?"Open / Replay":"Enter"}</button>`;
+  g.appendChild(c);
+ });
+}
+function openStage(i){
+ currentStage=i; state.currentStage=i;
+ document.getElementById("stageTitle").textContent=`${stages[i].icon} ${stages[i].name}`;
+ document.getElementById("stageDesc").textContent=stages[i].desc;
+ let g=document.getElementById("sectionGrid");g.innerHTML="";
+ ["Math","Reading","Logic / Problem Solving"].forEach((name,sec)=>{
+  let unlocked=sec===0||state.completed[i][sec-1]||state.completed[i][sec];
+  let done=state.completed[i][sec];
+  let score=state.scores[i][sec];
+  let c=document.createElement("div");c.className="card"+(unlocked?"":" locked");
+  c.innerHTML=`<h3>${sec===0?"➗":sec===1?"📚":"🧠"} ${name}</h3><p>10 challenges</p><p>${done?`✅ Complete — ${score}/10`:unlocked?"🔓 Ready":"🔒 Locked"}</p><button class="btn" ${unlocked?"":"disabled"} onclick="startSection(${sec})">${done?"Replay":"Start"}</button>`;
+  g.appendChild(c);
+ });
+ if(state.completed[i].every(Boolean) && !state.earned[i]){
+  let c=document.createElement("div");c.className="card";
+  c.innerHTML=`<h3>🎁 Choose Your ${stages[i].piece}</h3><p>All 3 sections are complete.</p><button class="btn good" onclick="showEarn(${i})">Choose Glam Piece</button>`;
+  g.appendChild(c);
+ }
+ screen("stage");
+}
+function mathSet(stage){
+ let q=[];
+ for(let n=0;n<10;n++){
+  let type=(stage+n)%5, a=0,b=0,ans=0,text="",opts=[];
+  if(type===0){a=12+stage*5+n;b=4+(n%7);ans=a+b;text=`What is ${a} + ${b}?`;}
+  if(type===1){a=28+stage*6+n;b=5+(n%8);ans=a-b;text=`What is ${a} - ${b}?`;}
+  if(type===2){a=2+((n+stage)%7);b=2+((n*2+stage)%6);ans=a*b;text=`What is ${a} × ${b}?`;}
+  if(type===3){b=2+((n+stage)%6);ans=2+((n*2+stage)%7);a=b*ans;text=`${a} sparkle gems are shared equally among ${b} friends. How many does each friend get?`;}
+  if(type===4){a=20+stage*10+n*3;b=5+((n+2)%9);ans=a-b;text=`You have ${a} style coins and spend ${b}. How many remain?`;}
+  let wrong=[ans+2,Math.max(0,ans-2),ans+5];
+  opts=[ans,...wrong].map(String).sort(()=>Math.random()-.5);
+  q.push({q:text,a:opts,correct:opts.indexOf(String(ans)),hint:"Try the operation carefully and check your work."});
+ }
+ return q;
+}
+function bankFor(stage,sec){
+ if(sec===0)return mathSet(stage);
+ let src=sec===1?readingSets[stage]:logicSets[stage];
+ return src.map(x=>({q:x[0],a:x[1],correct:x[2],hint:"Read the clues carefully and eliminate answers that do not fit."}));
+}
+function startSection(sec){
+ currentSection=sec; state.currentSection=sec; state.currentQuestion=0; state.quizScore=0;
+ currentQuestions=bankFor(currentStage,sec); currentAnswerLocked=false;
+ document.getElementById("quizTitle").textContent=stages[currentStage].name;
+ document.getElementById("sectionBadge").textContent=["➗ Math","📚 Reading","🧠 Logic / Problem Solving"][sec];
+ renderQuestion();screen("quiz");
+}
+function renderQuestion(){
+ let i=state.currentQuestion,q=currentQuestions[i];
+ document.getElementById("quizProgress").style.width=((i/10)*100)+"%";
+ document.getElementById("question").textContent=`${i+1}. ${q.q}`;
+ let a=document.getElementById("answers");a.innerHTML="";currentAnswerLocked=false;
+ q.a.forEach((t,idx)=>{let b=document.createElement("button");b.className="answer";b.textContent=t;b.onclick=()=>answer(idx,b);a.appendChild(b)});
+ document.getElementById("feedback").textContent="";document.getElementById("nextBtn").style.display="none";
+}
+function answer(idx,btn){
+ if(currentAnswerLocked)return;currentAnswerLocked=true;
+ let q=currentQuestions[state.currentQuestion],buttons=[...document.querySelectorAll(".answer")];
+ if(idx===q.correct){btn.classList.add("correct");state.quizScore++;state.points+=10;document.getElementById("feedback").textContent="✅ Correct! +10 Style Points";}
+ else{btn.classList.add("wrong");buttons[q.correct].classList.add("correct");state.points+=3;document.getElementById("feedback").textContent="💡 Nice try. "+q.hint+" +3 effort points";}
+ save();document.getElementById("nextBtn").style.display="inline-block";
+}
+function nextQuestion(){
+ if(state.currentQuestion<9){state.currentQuestion++;renderQuestion();return;}
+ let wasDone=state.completed[currentStage][currentSection];
+ if(!wasDone){state.completed[currentStage][currentSection]=true;state.scores[currentStage][currentSection]=state.quizScore;}
+ else{state.scores[currentStage][currentSection]=Math.max(state.scores[currentStage][currentSection]||0,state.quizScore);}
+ if(state.quizScore>=9)state.points+=25;
+ save();
+ showSectionTicket(currentStage,currentSection,state.quizScore);
+}
+function showSectionTicket(stage,sec,score){
+ state.ticketReturn={stage,sec};
+ document.getElementById("sectionTicketTitle").textContent=score>=9?"🌟 Bonus-Star Section Complete!":"Section Complete!";
+ document.getElementById("sectionTicketName").textContent=state.name;
+ document.getElementById("sectionTicketQuest").textContent=stages[stage].name;
+ document.getElementById("sectionTicketSection").textContent=["Math","Reading","Logic / Problem Solving"][sec];
+ document.getElementById("sectionTicketScore").textContent=score;
+ document.getElementById("sectionTicketPrize").textContent=state.prizes[stage][sec]||"Prize";
+ screen("sectionTicket");
+}
+function continueAfterTicket(){
+ let {stage}=state.ticketReturn||{stage:currentStage};
+ if(state.completed[stage].every(Boolean)&&!state.earned[stage])showEarn(stage); else openStage(stage);
+}
+function showEarn(stage){
+ currentStage=stage;pendingChoice=state.choices[stage];
+ document.getElementById("earnText").textContent=`You completed all three learning sections in ${stages[stage].name}. Pick one ${stages[stage].piece} for your closet.`;
+ let g=document.getElementById("choiceGrid");g.innerHTML="";
+ glamChoices[stage].forEach((c,i)=>{let d=document.createElement("div");d.className="choice"+(pendingChoice===i?" selected":"");d.onclick=()=>selectPending(i);d.innerHTML=`<div class="swatch" style="background:${c.color}"></div><strong>${c.name}</strong>`;g.appendChild(d)});
+ document.getElementById("saveChoiceBtn").disabled=pendingChoice===null;screen("earn");
+}
+function selectPending(i){pendingChoice=i;[...document.querySelectorAll("#choiceGrid .choice")].forEach((x,n)=>x.classList.toggle("selected",n===i));document.getElementById("saveChoiceBtn").disabled=false}
+function saveEarnedChoice(){state.choices[currentStage]=pendingChoice;state.earned[currentStage]=true;save();openCloset()}
+function avatarHTML(size="normal"){
+ let sel=state.choices;
+ let hair=sel[0]!=null?glamChoices[0][sel[0]].color:"#5b3e31";
+ let top=sel[1]!=null?glamChoices[1][sel[1]].color:"#ff5dbd";
+ let bottom=sel[2]!=null?glamChoices[2][sel[2]].color:"#8ed9ff";
+ let shoe=sel[3]!=null?glamChoices[3][sel[3]].color:"#8b5cf6";
+ let acc=sel[4]!=null?glamChoices[4][sel[4]]:null;
+ let accessory="";
+ if(acc){
+  if(acc.kind==="crown")accessory=`<div class="accessory" style="left:92px;top:0;font-size:46px">👑</div>`;
+  if(acc.kind==="glasses")accessory=`<div class="accessory" style="left:93px;top:68px;font-size:38px">💗</div>`;
+  if(acc.kind==="bow")accessory=`<div class="accessory" style="left:166px;top:24px;font-size:38px">🎀</div>`;
+  if(acc.kind==="gem")accessory=`<div class="accessory" style="left:110px;top:144px;font-size:34px">💎</div>`;
+ }
+ return `<div class="avatar"><div class="part hair" style="background:${hair}"></div><div class="part head"></div><div class="eye l"></div><div class="eye r"></div><div class="smile"></div><div class="part topPart" style="background:${top}"></div><div class="part bottomPart" style="background:${bottom}"></div><div class="part arm l"></div><div class="part arm r"></div><div class="part shoe l" style="background:${shoe}"></div><div class="part shoe r" style="background:${shoe}"></div>${accessory}</div>`;
+}
+function openCloset(){
+ document.getElementById("closetAvatar").innerHTML=avatarHTML();
+ let controls=document.getElementById("closetControls");controls.innerHTML="";
+ stages.forEach((s,stage)=>{
+  let box=document.createElement("div");box.className="card";box.style.marginBottom="10px";
+  if(!state.earned[stage])box.innerHTML=`<strong>${s.piece}</strong><p>🔒 Not earned yet</p>`;
+  else{
+   let opts=glamChoices[stage].map((c,i)=>`<option value="${i}" ${state.choices[stage]===i?"selected":""}>${c.name}</option>`).join("");
+   box.innerHTML=`<strong>${s.piece}</strong><p><select onchange="changeCloset(${stage},this.value)" style="width:100%;padding:10px;border-radius:10px">${opts}</select></p>`;
+  }
+  controls.appendChild(box);
+ });
+ document.getElementById("runwayBtn").disabled=!state.earned.every(Boolean);screen("closet");
+}
+function changeCloset(stage,val){state.choices[stage]=Number(val);save();document.getElementById("closetAvatar").innerHTML=avatarHTML()}
+function showRunway(){if(!state.earned.every(Boolean))return;document.getElementById("runwayAvatar").innerHTML=avatarHTML();document.getElementById("runwayName").textContent=state.name;screen("runway")}
+function showGrandTicket(){document.getElementById("ticketAvatar").innerHTML=avatarHTML();document.getElementById("grandName").textContent=state.name;document.getElementById("grandPoints").textContent=state.points;document.getElementById("grandPrizeText").textContent=state.grandPrize||"Grand Prize";screen("grandTicket")}
+function openSettings(){
+ document.getElementById("setName").value=state.name;
+ let d=document.getElementById("prizeSettings");d.innerHTML="";
+ stages.forEach((s,i)=>["Math","Reading","Logic / Problem Solving"].forEach((sec,j)=>{
+  let row=document.createElement("div");row.className="settingsRow";row.innerHTML=`<strong>${s.name} — ${sec}</strong><input id="prize_${i}_${j}" value="${(state.prizes[i][j]||"").replace(/"/g,"&quot;")}">`;d.appendChild(row)
+ }));
+ document.getElementById("grandPrizeInput").value=state.grandPrize||"";screen("settings")
+}
+function saveSettings(){
+ state.name=document.getElementById("setName").value.trim()||"Fashion Star";
+ stages.forEach((s,i)=>[0,1,2].forEach(j=>state.prizes[i][j]=document.getElementById(`prize_${i}_${j}`).value.trim()||"Prize"));
+ state.grandPrize=document.getElementById("grandPrizeInput").value.trim()||"Grand Prize";save();goHome()
+}
+function resetProgress(){
+ if(!confirm("Reset all scores, earned glam pieces, and outfit choices? Prize settings and player name will be kept."))return;
+ let name=state.name,prizes=state.prizes,grandPrize=state.grandPrize;
+ state=JSON.parse(JSON.stringify(defaultState));state.name=name;state.prizes=prizes;state.grandPrize=grandPrize;save();goHome()
+}
+load();
+</script>
+</body>
+</html>

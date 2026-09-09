@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adventure Academy</title>
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">WELCOME TO</div>
+        <h1>✨ Adventure Academy</h1>
+      </div>
+      <div class="player-strip">
+        <div class="stat">⭐ <span id="pointsValue">0</span></div>
+        <div class="stat">🔥 <span id="curiosityValue">0</span></div>
+        <button class="ghost-btn" id="settingsBtn">⚙ Grown-Up Settings</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero-card">
+        <div class="hero-copy">
+          <span class="mini-badge">PLAYER PROFILE</span>
+          <h2 id="welcomeName">Welcome, Fashion Star!</h2>
+          <p>
+            Learn, solve, build, code, lead, investigate, invent, and unlock real-world challenges.
+          </p>
+          <div class="progress-line">
+            <div>
+              <strong>Academy Progress</strong>
+              <span id="academyProgressText">0 worlds completed</span>
+            </div>
+            <div class="progress-track"><div id="academyProgressBar"></div></div>
+          </div>
+        </div>
+        <div class="avatar-card">
+          <div class="avatar-preview" aria-label="blocky academy avatar">
+            <div class="hair"></div>
+            <div class="head"></div>
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+            <div class="smile"></div>
+            <div class="torso"></div>
+            <div class="arm left"></div>
+            <div class="arm right"></div>
+            <div class="leg left"></div>
+            <div class="leg right"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-heading">
+        <div>
+          <span class="eyebrow">YOUR MAP</span>
+          <h2>Choose a World</h2>
+        </div>
+        <button class="ghost-btn" id="refreshBtn">↻ Refresh Progress</button>
+      </section>
+
+      <section id="worldGrid" class="world-grid"></section>
+
+      <section class="achievement-panel">
+        <div>
+          <span class="eyebrow">BADGE CASE</span>
+          <h2>Achievements</h2>
+        </div>
+        <div id="badgeGrid" class="badge-grid"></div>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="settingsDialog">
+    <form method="dialog" class="settings-card">
+      <div class="modal-head">
+        <div>
+          <span class="eyebrow">GROWN-UP CONTROLS</span>
+          <h2>Academy Settings</h2>
+        </div>
+        <button class="icon-btn" value="cancel">✕</button>
+      </div>
+
+      <label>
+        Player name
+        <input id="playerNameInput" type="text" maxlength="30" />
+      </label>
+
+      <label>
+        Grand prize
+        <input id="grandPrizeInput" type="text" maxlength="80" />
+      </label>
+
+      <div class="setting-block">
+        <strong>Testing controls</strong>
+        <p class="small">Useful while we are building new worlds.</p>
+        <div class="button-row">
+          <button type="button" class="secondary-btn" id="unlockAllBtn">Unlock All Worlds</button>
+          <button type="button" class="danger-btn" id="resetBtn">Reset Progress</button>
+        </div>
+      </div>
+
+      <div class="setting-block">
+        <strong>Cloud status</strong>
+        <p class="small" id="cloudStatus">
+          Local save active. Firebase is scaffolded but not connected yet.
+        </p>
+      </div>
+
+      <div class="button-row">
+        <button type="button" class="primary-btn" id="saveSettingsBtn">Save Settings</button>
+        <button class="ghost-btn" value="cancel">Close</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
